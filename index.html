@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajat Gangwar — Resume</title>
+<style>
+  :root {
+    --bg: #e9eaee;
+    --panel: #ffffff;
+    --panel-2: #eef0f3;
+    --border: #cfd3da;
+    --text: #14171c;
+    --muted: #565d6a;
+    --accent: #2f5fd6;
+    --ok: #22863a;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+  }
+  .topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 0 3px rgba(63,185,80,0.15);
+  }
+  .topbar .status {
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 28px 60px;
+  }
+  .header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .header-row h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .header-row .sub {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 4px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .stat {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .stat .label {
+    color: var(--muted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .stat .value {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .stat .value.accent { color: var(--accent); }
+
+  .panels {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 14px;
+  }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .panel-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .panel-body { padding: 6px 0; }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 18px;
+    text-decoration: none;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.12s ease;
+  }
+  .row:last-child { border-bottom: none; }
+  .row:hover { background: var(--panel-2); }
+  .row .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .row .icon {
+    width: 30px; height: 30px;
+    border-radius: 7px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .row .title { font-size: 13.5px; font-weight: 600; }
+  .row .desc { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .row .arrow { color: var(--muted); font-size: 13px; }
+
+  .primary-row .icon { background: rgba(79,140,255,0.12); border-color: rgba(79,140,255,0.3); }
+  .primary-row .title { color: var(--accent); }
+
+  .footer-note {
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .panels { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> rajatgangwar-resume</div>
+  </div>
+
+  <div class="wrap">
+    <div class="header-row">
+      <div>
+        <h1>Rajat Gangwar</h1>
+        <div class="sub">Software Engineer — AI Solutions &amp; Scalable Applications</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="stat">
+        <div class="label">CodeChef Rating</div>
+        <div class="value accent">2200+ ★6</div>
+      </div>
+      <div class="stat">
+        <div class="label">DSA Solved</div>
+        <div class="value">1000+</div>
+      </div>
+      <div class="stat">
+        <div class="label">Education</div>
+        <div class="value">B.Tech · NIT</div>
+      </div>
+      <div class="stat">
+        <div class="label">Status</div>
+        <div class="value accent">Open to work</div>
+      </div>
+    </div>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-head"><span>Documents</span></div>
+        <div class="panel-body">
+          <a class="row primary-row" href="/latest.pdf" target="_blank" rel="noopener">
+            <span class="left">
+              <span class="icon">📄</span>
+              <span>
+                <div class="title">Latest Resume</div>
+                <div class="desc">Always up to date · PDF</div>
+              </span>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><span>Profiles</span></div>
+        <div class="panel-body">
+          <a class="row" href="https://rajatgangwar.netlify.app" target="_blank" rel="noopener">
+            <span class="left">
+              <span class="icon">🌐</span>
+              <span><div class="title">Portfolio</div></span>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="row" href="https://github.com/rajatgangwar-41" target="_blank" rel="noopener">
+            <span class="left">
+              <span class="icon">🐙</span>
+              <span><div class="title">GitHub</div></span>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="row" href="https://linkedin.com/in/rajatgangwar41/" target="_blank" rel="noopener">
+            <span class="left">
+              <span class="icon">💼</span>
+              <span><div class="title">LinkedIn</div></span>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="row" href="https://codechef.com/users/rajatgangwar/" target="_blank" rel="noopener">
+            <span class="left">
+              <span class="icon">🏆</span>
+              <span><div class="title">CodeChef</div></span>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">Per-application resume variants are versioned at their own links.</div>
+  </div>
+</body>
+</html>
