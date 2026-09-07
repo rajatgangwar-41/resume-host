@@ -4,6 +4,21 @@
   "updated": "2026-09-07T09:41:17Z",
   "applications": [
     {
+      "id": "ecoratings-1788568255",
+      "tag": "EcoRatings - 1788568255",
+      "company": "EcoRatings",
+      "role": "Frontend Developer (Fresher)",
+      "jobId": "1788568255",
+      "date": "2026-09-07",
+      "files": {
+        "resume": "Company/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.pdf",
+        "coverLetter": "Cover Letter/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.pdf",
+        "linkedin": "LinkedIn/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.txt",
+        "prepare": "Prepare/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "appversal-1788708410",
       "tag": "AppVersal - 1788708410",
       "company": "AppVersal",
@@ -84,7 +99,9 @@
         "linkedin": "LinkedIn/Dentsu-Sokrati/Developer_R1128610_2026-09-03.txt",
         "prepare": "Prepare/Dentsu-Sokrati/Developer_R1128610_2026-09-03.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Dentsu-Sokrati---R1128610.pdf"
+      ]
     },
     {
       "id": "bristol-myers-squibb-r1605676",
