@@ -3,7 +3,9 @@
 # Runs in GitHub Actions (daily + on demand) and locally via publish.sh.
 #
 #   scripts/maintain.sh prune             delete applications older than retentionDays
-#   scripts/maintain.sh delete <id|TAG>   delete one application (all its files)
+#   scripts/maintain.sh delete <id|TAG> [key]   delete one application (all its
+#                                         files), or only one file (key = resume|
+#                                         coverLetter|linkedin|prepare)
 #   scripts/maintain.sh reconcile         drop manifest refs whose files vanished,
 #                                         drop empty entries (run after every change)
 #
@@ -29,9 +31,16 @@ remove_entry_files() {   # $1 = id
 cmd="${1:-reconcile}"
 case "$cmd" in
   delete)
-    id="$(slug_id "${2:?usage: maintain.sh delete <id|TAG>}")"
+    id="$(slug_id "${2:?usage: maintain.sh delete <id|TAG> [key]}")"; key="${3:-}"
     if jq -e --arg id "$id" '.applications[] | select(.id==$id)' "$M" >/dev/null; then
-      echo "deleting $id"; remove_entry_files "$id"
+      if [ -n "$key" ]; then
+        f="$(jq -r --arg id "$id" --arg k "$key" '.applications[] | select(.id==$id) | .files[$k] // empty' "$M")"
+        [ -n "$f" ] || { echo "no file '$key' in $id"; exit 1; }
+        echo "deleting $id.$key"; rm -f -- "$f"; echo "  removed $f"
+        rmdir --ignore-fail-on-non-empty -- "$(dirname -- "$f")" 2>/dev/null || true
+      else
+        echo "deleting $id"; remove_entry_files "$id"
+      fi
     else
       echo "no application with id '$id'"; exit 1
     fi

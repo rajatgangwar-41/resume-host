@@ -14,6 +14,10 @@ on:
         description: "Application id (or TAG) to delete; empty = prune only"
         required: false
         default: ""
+      file:
+        description: "Optional: only this file (resume|coverLetter|linkedin|prepare)"
+        required: false
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -24,11 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Delete requested application
+      - name: Delete requested application / file
         if: github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.id != '')
         env:
           TARGET: ${{ github.event.client_payload.id || inputs.id }}
-        run: bash scripts/maintain.sh delete "$TARGET" || true
+          KEY: ${{ github.event.client_payload.file || inputs.file }}
+        run: bash scripts/maintain.sh delete "$TARGET" $KEY || true
       - name: Prune expired applications
         run: bash scripts/maintain.sh prune
       - name: Commit and push
