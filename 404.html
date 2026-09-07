@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Rajat Gangwar — Redirecting</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#e9eaee;color:#14171c;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}.card{background:#fff;border:1px solid #cfd3da;border-radius:10px;padding:26px 30px;max-width:460px;text-align:center}a{color:#2f5fd6}p{color:#565d6a;font-size:14px}</style>
+</head>
+<body>
+<div class="card">
+  <h2 id="h">Looking for that document…</h2>
+  <p id="p">If this is an old resume link, you will be redirected to its new location in a moment.</p>
+  <p><a href="/resume-host/documents.html">Browse all application documents →</a></p>
+</div>
+<script>
+(function(){
+  // Old flat links (…/resume-host/<Company>---<JobID>.pdf) and latest.pdf were
+  // moved into per-company folders; manifest.json keeps each entry's legacy names.
+  const base = '/resume-host/';
+  const rel = decodeURIComponent(location.pathname.replace(/^\/resume-host\//,''));
+  const fail = () => { document.getElementById('h').textContent = 'Document not found'; document.getElementById('p').textContent = 'It may have expired (entries are removed after 90 days) or been deleted.'; };
+  if (!rel || rel === 'latest.pdf' || rel === 'Apply.pdf') { location.replace(base + 'documents.html'); return; }
+  fetch(base + 'manifest.json', {cache:'no-store'}).then(r=>r.json()).then(m=>{
+    const hit = (m.applications||[]).find(a => (a.legacy||[]).includes(rel));
+    if (hit && hit.files && hit.files.resume) location.replace(base + hit.files.resume.split('/').map(encodeURIComponent).join('/'));
+    else fail();
+  }).catch(fail);
+})();
+</script>
+</body>
+</html>

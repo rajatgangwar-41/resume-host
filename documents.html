@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Rajat Gangwar — Application Documents</title>
+<style>
+  :root{--bg:#e9eaee;--panel:#fff;--panel-2:#eef0f3;--border:#cfd3da;--text:#14171c;--muted:#565d6a;--accent:#2f5fd6;--ok:#22863a;--warn:#b26a00;--danger:#c0392b}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+  a{color:var(--accent)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--border);background:var(--panel);gap:12px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--text);text-decoration:none}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(63,185,80,.15)}
+  .tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  input[type=search],input[type=password]{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);min-width:220px}
+  button{font:inherit;font-size:12.5px;padding:7px 12px;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);cursor:pointer}
+  button:hover{background:var(--panel-2)}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  button.danger{color:var(--danger);border-color:rgba(192,57,43,.4)}
+  button.danger:hover{background:rgba(192,57,43,.08)}
+  button:disabled{opacity:.5;cursor:default}
+  .wrap{max-width:1040px;margin:0 auto;padding:28px 28px 60px}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  h1{font-size:22px;margin:0;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:13px;margin-top:4px}
+  .stats{display:flex;gap:10px;flex-wrap:wrap}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:12.5px;color:var(--muted)}
+  .stat b{color:var(--text);font-size:14px;margin-right:4px}
+  .manage{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:13px;display:none;gap:10px;align-items:center;flex-wrap:wrap}
+  .manage.on{display:flex}
+  .manage .hint{color:var(--muted);font-size:12px;flex-basis:100%}
+  .company{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:14px;overflow:hidden}
+  .company-head{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid var(--border);background:var(--panel-2)}
+  .company-head h2{font-size:14.5px;margin:0;font-weight:700}
+  .company-head .count{font-size:12px;color:var(--muted)}
+  .app{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:13px 18px;border-bottom:1px solid var(--border);align-items:center}
+  .app:last-child{border-bottom:none}
+  .app .role{font-size:13.5px;font-weight:600}
+  .app .meta{font-size:12px;color:var(--muted);margin-top:3px;display:flex;gap:10px;flex-wrap:wrap}
+  .badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);background:var(--panel)}
+  .badge.soon{color:var(--warn);border-color:rgba(178,106,0,.4)}
+  .docs{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+  .doc{font-size:12px;text-decoration:none;padding:5px 10px;border:1px solid var(--border);border-radius:7px;background:var(--panel);color:var(--text);white-space:nowrap}
+  .doc:hover{background:var(--panel-2)}
+  .doc.resume{border-color:rgba(79,140,255,.4);color:var(--accent);font-weight:600}
+  .confirm{grid-column:1/-1;display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--danger)}
+  .status{grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+  .section-title{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:26px 0 10px;font-weight:600}
+  .empty{color:var(--muted);font-size:13px;padding:20px;text-align:center}
+  .footer-note{margin-top:26px;color:var(--muted);font-size:12px;text-align:center}
+  .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#14171c;color:#fff;padding:10px 16px;border-radius:9px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+  .toast.show{opacity:1}
+  @media (max-width:640px){.app{grid-template-columns:1fr}.docs{justify-content:flex-start}}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="brand" href="./"><span class="dot"></span> rajatgangwar-resume</a>
+    <div class="tools">
+      <input type="search" id="q" placeholder="Filter by company, role, job id…" aria-label="Filter">
+      <button id="manageBtn" title="Owner tools: delete applications">Manage</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h1>Application Documents</h1>
+        <div class="sub">Every tailored resume, cover letter, LinkedIn note and learning guide — grouped by company. Entries auto-expire after <span id="retention">90</span> days.</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="nApps">–</b>applications</div>
+        <div class="stat"><b id="nCompanies">–</b>companies</div>
+        <div class="stat"><b id="updated">–</b>last update</div>
+      </div>
+    </div>
+
+    <div class="manage" id="manage">
+      <span id="manageState">Not signed in.</span>
+      <input type="password" id="token" placeholder="GitHub fine-grained token" autocomplete="off">
+      <button class="primary" id="saveToken">Save token</button>
+      <button id="clearToken">Sign out</button>
+      <span class="hint">Token needs <b>Contents: read &amp; write</b> on <code>rajatgangwar-41/resume-host</code> only. It is stored in this browser's localStorage and sent only to api.github.com. Delete = a <code>repository_dispatch</code> that runs the maintain workflow; the site updates ~1–2 minutes later.</span>
+    </div>
+
+    <div id="apps"></div>
+
+    <div class="section-title">General documents</div>
+    <div class="company" id="general"></div>
+
+    <div class="footer-note">Files older than the retention window are removed automatically by a daily GitHub Action.</div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  const REPO = 'rajatgangwar-41/resume-host';
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const href = p => p.split('/').map(encodeURIComponent).join('/');
+  const LABEL = {resume:'Resume', coverLetter:'Cover Letter', linkedin:'LinkedIn Message', prepare:'Learning Guide'};
+  const ORDER = ['resume','coverLetter','linkedin','prepare'];
+  let manifest = null, manageOn = false;
+  const token = { get(){ try{return localStorage.getItem('rh_token')||''}catch(e){return ''} },
+                  set(v){ try{ v?localStorage.setItem('rh_token',v):localStorage.removeItem('rh_token') }catch(e){} } };
+
+  function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),3200); }
+  function daysLeft(a){ const d=new Date(a.date+'T00:00:00Z'); const exp=new Date(d.getTime()+(manifest.retentionDays||90)*864e5); return Math.ceil((exp-Date.now())/864e5); }
+  function fmtDate(s){ const d=new Date(s+'T00:00:00Z'); return isNaN(d)?s:d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}); }
+
+  function render(){
+    const q = ($('#q').value||'').trim().toLowerCase();
+    const apps = (manifest.applications||[]).filter(a => !a._deleted && (!q || [a.company,a.role,a.jobId,a.tag].join(' ').toLowerCase().includes(q)));
+    const byCo = new Map();
+    for (const a of apps){ if(!byCo.has(a.company)) byCo.set(a.company,[]); byCo.get(a.company).push(a); }
+    const groups = [...byCo.entries()].sort((x,y)=> y[1][0].date.localeCompare(x[1][0].date) || x[0].localeCompare(y[0]));
+    const root = $('#apps'); root.innerHTML = '';
+    if(!groups.length){ root.innerHTML = '<div class="company"><div class="empty">No applications match.</div></div>'; }
+    for (const [company, list] of groups){
+      const box = document.createElement('div'); box.className='company';
+      box.innerHTML = `<div class="company-head"><h2>${esc(company)}</h2><span class="count">${list.length} application${list.length>1?'s':''}</span></div>`;
+      for (const a of list){
+        const left = daysLeft(a);
+        const row = document.createElement('div'); row.className='app'; row.dataset.id=a.id;
+        const docs = ORDER.filter(k=>a.files&&a.files[k]).map(k=>`<a class="doc ${k}" href="${href(a.files[k])}" target="_blank" rel="noopener">${LABEL[k]}</a>`).join('');
+        const del = manageOn ? `<button class="danger del" data-id="${esc(a.id)}">Delete</button>` : '';
+        row.innerHTML = `
+          <div>
+            <div class="role">${esc(a.role||a.tag)}</div>
+            <div class="meta">
+              ${a.jobId?`<span>Job ID <b>${esc(a.jobId)}</b></span>`:''}
+              <span>${fmtDate(a.date)}</span>
+              <span class="badge ${left<=14?'soon':''}">${left>0?`expires in ${left}d`:'expiring'}</span>
+            </div>
+          </div>
+          <div class="docs">${docs}${del}</div>`;
+        box.appendChild(row);
+      }
+      root.appendChild(box);
+    }
+    const g = $('#general'); const gen = manifest.general||[];
+    g.innerHTML = gen.length ? gen.map(d=>`<div class="app"><div><div class="role">${esc(d.name)}</div><div class="meta"><span>${esc(d.folder)}</span>${d.date?`<span>${fmtDate(d.date)}</span>`:''}</div></div><div class="docs"><a class="doc resume" href="${href(d.path)}" target="_blank" rel="noopener">Open</a></div></div>`).join('') : '<div class="empty">None.</div>';
+    const live = (manifest.applications||[]).filter(a=>!a._deleted);
+    $('#nApps').textContent = live.length; $('#nCompanies').textContent = new Set(live.map(a=>a.company)).size;
+    $('#updated').textContent = manifest.updated ? new Date(manifest.updated).toLocaleDateString('en-GB',{day:'2-digit',month:'short'}) : '–';
+    $('#retention').textContent = manifest.retentionDays||90;
+  }
+
+  function setManage(on){
+    manageOn = on; $('#manage').classList.toggle('on', on); $('#manageBtn').textContent = on ? 'Done' : 'Manage';
+    $('#manageState').textContent = token.get() ? 'Signed in — delete buttons are live.' : 'Not signed in — paste a token to enable delete.';
+    render();
+  }
+
+  async function dispatchDelete(id, row){
+    const t = token.get(); if(!t){ toast('Save a token first.'); return; }
+    row.querySelectorAll('button').forEach(b=>b.disabled=true);
+    try{
+      const r = await fetch(`https://api.github.com/repos/${REPO}/dispatches`, { method:'POST',
+        headers:{ 'Authorization':`Bearer ${t}`, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json', 'X-GitHub-Api-Version':'2022-11-28' },
+        body: JSON.stringify({ event_type:'delete-application', client_payload:{ id } }) });
+      if (r.status === 204){
+        const a = manifest.applications.find(x=>x.id===id); if(a) a._deleted = true;
+        toast('Deletion queued — the site updates in ~1–2 minutes.'); render();
+      } else {
+        const msg = r.status===401||r.status===403 ? 'Token rejected (needs Contents: write on the repo).' : `GitHub API error ${r.status}.`;
+        toast(msg); row.querySelectorAll('button').forEach(b=>b.disabled=false);
+      }
+    }catch(e){ toast('Network error — try again.'); row.querySelectorAll('button').forEach(b=>b.disabled=false); }
+  }
+
+  $('#apps').addEventListener('click', e => {
+    const b = e.target.closest('button'); if(!b) return;
+    const row = b.closest('.app'); const id = row.dataset.id;
+    if (b.classList.contains('del')){
+      if (row.querySelector('.confirm')) return;
+      const c = document.createElement('div'); c.className='confirm';
+      c.innerHTML = `Delete this application and all 4 files? <button class="danger yes">Yes, delete</button><button class="no">Cancel</button>`;
+      row.appendChild(c);
+    } else if (b.classList.contains('yes')){ dispatchDelete(id, row); }
+    else if (b.classList.contains('no')){ row.querySelector('.confirm')?.remove(); }
+  });
+  $('#manageBtn').addEventListener('click', ()=> setManage(!manageOn));
+  $('#saveToken').addEventListener('click', ()=>{ const v=$('#token').value.trim(); if(!v){toast('Paste a token first.');return;} token.set(v); $('#token').value=''; setManage(true); toast('Token saved in this browser.'); });
+  $('#clearToken').addEventListener('click', ()=>{ token.set(''); setManage(true); toast('Signed out.'); });
+  $('#q').addEventListener('input', render);
+
+  fetch('manifest.json?t=' + Date.now(), {cache:'no-store'}).then(r=>r.json()).then(m=>{ manifest=m; render(); })
+    .catch(()=>{ $('#apps').innerHTML='<div class="company"><div class="empty">Could not load manifest.json.</div></div>'; });
+})();
+</script>
+</body>
+</html>

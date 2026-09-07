@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "retentionDays": 90,
+  "updated": "2026-09-07T09:41:16Z",
+  "applications": [
+    {
+      "id": "antal-international-1788741154",
+      "tag": "Antal International - 1788741154",
+      "company": "Antal International",
+      "role": "Java Backend Developer (Fresher)",
+      "jobId": "1788741154",
+      "date": "2026-09-07",
+      "files": {
+        "resume": "Company/Antal-International/Java-Backend-Developer-Fresher_1788741154_2026-09-07.pdf",
+        "coverLetter": "Cover Letter/Antal-International/Java-Backend-Developer-Fresher_1788741154_2026-09-07.pdf",
+        "linkedin": "LinkedIn/Antal-International/Java-Backend-Developer-Fresher_1788741154_2026-09-07.txt",
+        "prepare": "Prepare/Antal-International/Java-Backend-Developer-Fresher_1788741154_2026-09-07.pdf"
+      },
+      "legacy": []
+    }
+  ],
+  "general": []
+}
