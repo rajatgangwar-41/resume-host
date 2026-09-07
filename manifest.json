@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:18Z",
+  "updated": "2026-09-07T09:41:19Z",
   "applications": [
     {
       "id": "incommon-1788741150",
@@ -16,7 +16,9 @@
         "linkedin": "LinkedIn/InCommon/Frontend-Agentic-Engineer-Fresher_1788741150_2026-09-07.txt",
         "prepare": "Prepare/InCommon/Frontend-Agentic-Engineer-Fresher_1788741150_2026-09-07.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "InCommon---1788741150.pdf"
+      ]
     },
     {
       "id": "ecoratings-1788568255",
@@ -68,6 +70,21 @@
       "legacy": [
         "Antal-International---1788741154.pdf"
       ]
+    },
+    {
+      "id": "infoskaters-ai-developer",
+      "tag": "Infoskaters - AI Developer",
+      "company": "Infoskaters",
+      "role": "AI Developer",
+      "jobId": "",
+      "date": "2026-09-04",
+      "files": {
+        "resume": "Company/Infoskaters/AI-Developer_2026-09-04.pdf",
+        "coverLetter": "Cover Letter/Infoskaters/AI-Developer_2026-09-04.pdf",
+        "linkedin": "LinkedIn/Infoskaters/AI-Developer_2026-09-04.txt",
+        "prepare": "Prepare/Infoskaters/AI-Developer_2026-09-04.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "datavinci-junior-analytics-engineer",
