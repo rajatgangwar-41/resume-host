@@ -38,6 +38,21 @@
       ]
     },
     {
+      "id": "datavinci-junior-analytics-engineer",
+      "tag": "DataVinci - Junior Analytics Engineer",
+      "company": "DataVinci",
+      "role": "Junior Analytics Engineer",
+      "jobId": "",
+      "date": "2026-09-04",
+      "files": {
+        "resume": "Company/DataVinci/Junior-Analytics-Engineer_2026-09-04.pdf",
+        "coverLetter": "Cover Letter/DataVinci/Junior-Analytics-Engineer_2026-09-04.pdf",
+        "linkedin": "LinkedIn/DataVinci/Junior-Analytics-Engineer_2026-09-04.txt",
+        "prepare": "Prepare/DataVinci/Junior-Analytics-Engineer_2026-09-04.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "best-trading-company-software-developer",
       "tag": "Best Trading Company - Software Developer",
       "company": "Best Trading Company",
@@ -67,7 +82,9 @@
         "linkedin": "LinkedIn/Bristol-Myers-Squibb/Associate-Software-Engineer_R1605676_2026-09-03.txt",
         "prepare": "Prepare/Bristol-Myers-Squibb/Associate-Software-Engineer_R1605676_2026-09-03.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Bristol-Myers-Squibb---R1605676.pdf"
+      ]
     },
     {
       "id": "barclays-jr-0000123867",
