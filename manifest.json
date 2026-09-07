@@ -4,6 +4,21 @@
   "updated": "2026-09-07T09:41:16Z",
   "applications": [
     {
+      "id": "appversal-1788708410",
+      "tag": "AppVersal - 1788708410",
+      "company": "AppVersal",
+      "role": "Golang Developer Intern",
+      "jobId": "1788708410",
+      "date": "2026-09-07",
+      "files": {
+        "resume": "Company/AppVersal/Golang-Developer-Intern_1788708410_2026-09-07.pdf",
+        "coverLetter": "Cover Letter/AppVersal/Golang-Developer-Intern_1788708410_2026-09-07.pdf",
+        "linkedin": "LinkedIn/AppVersal/Golang-Developer-Intern_1788708410_2026-09-07.txt",
+        "prepare": "Prepare/AppVersal/Golang-Developer-Intern_1788708410_2026-09-07.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "antal-international-1788741154",
       "tag": "Antal International - 1788741154",
       "company": "Antal International",
@@ -16,7 +31,9 @@
         "linkedin": "LinkedIn/Antal-International/Java-Backend-Developer-Fresher_1788741154_2026-09-07.txt",
         "prepare": "Prepare/Antal-International/Java-Backend-Developer-Fresher_1788741154_2026-09-07.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Antal-International---1788741154.pdf"
+      ]
     }
   ],
   "general": []
