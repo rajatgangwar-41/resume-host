@@ -1,8 +1,23 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:23Z",
+  "updated": "2026-09-07T09:41:24Z",
   "applications": [
+    {
+      "id": "topgrep-tech-software-developer-go-rust",
+      "tag": "TopGrep Tech - Software Developer (Go, Rust)",
+      "company": "TopGrep Tech",
+      "role": "Software Developer (Go / Rust)",
+      "jobId": "",
+      "date": "2026-09-07",
+      "files": {
+        "resume": "Company/TopGrep-Tech/Software-Developer-Go-Rust_2026-09-07.pdf",
+        "coverLetter": "Cover Letter/TopGrep-Tech/Software-Developer-Go-Rust_2026-09-07.pdf",
+        "linkedin": "LinkedIn/TopGrep-Tech/Software-Developer-Go-Rust_2026-09-07.txt",
+        "prepare": "Prepare/TopGrep-Tech/Software-Developer-Go-Rust_2026-09-07.pdf"
+      },
+      "legacy": []
+    },
     {
       "id": "sjtech-solutions-artificial-intelligence-developer",
       "tag": "SJTech Solutions - Artificial Intelligence Developer",
@@ -220,7 +235,9 @@
         "linkedin": "LinkedIn/TCS/Senior-NET-Full-Stack-Developer_4461694094_2026-09-03.txt",
         "prepare": "Prepare/TCS/Senior-NET-Full-Stack-Developer_4461694094_2026-09-03.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "TCS---4461694094.pdf"
+      ]
     },
     {
       "id": "propsoch-frontend-engineer",
