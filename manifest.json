@@ -16,7 +16,9 @@
         "linkedin": "LinkedIn/MindBridge/Associate-Gen-AI-Engineer_2026-09-07.txt",
         "prepare": "Prepare/MindBridge/Associate-Gen-AI-Engineer_2026-09-07.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "MindBridge---Associate-Gen-AI-Engineer.pdf"
+      ]
     },
     {
       "id": "incommon-1788741150",
@@ -136,6 +138,21 @@
       "legacy": [
         "Best-Trading-Company---Software-Developer.pdf"
       ]
+    },
+    {
+      "id": "parsons-r185565",
+      "tag": "Parsons - R185565",
+      "company": "Parsons",
+      "role": "Software Developer Intern",
+      "jobId": "R185565",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/Parsons/Software-Developer-Intern_R185565_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/Parsons/Software-Developer-Intern_R185565_2026-09-03.pdf",
+        "linkedin": "LinkedIn/Parsons/Software-Developer-Intern_R185565_2026-09-03.txt",
+        "prepare": "Prepare/Parsons/Software-Developer-Intern_R185565_2026-09-03.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "l-t-lnt-se-ls-1713751",
