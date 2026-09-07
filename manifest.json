@@ -140,6 +140,21 @@
       ]
     },
     {
+      "id": "propsoch-frontend-engineer",
+      "tag": "Propsoch - Frontend Engineer",
+      "company": "Propsoch",
+      "role": "Frontend Engineer",
+      "jobId": "",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/Propsoch/Frontend-Engineer_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/Propsoch/Frontend-Engineer_2026-09-03.pdf",
+        "linkedin": "LinkedIn/Propsoch/Frontend-Engineer_2026-09-03.txt",
+        "prepare": "Prepare/Propsoch/Frontend-Engineer_2026-09-03.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "parsons-r185565",
       "tag": "Parsons - R185565",
       "company": "Parsons",
@@ -152,7 +167,9 @@
         "linkedin": "LinkedIn/Parsons/Software-Developer-Intern_R185565_2026-09-03.txt",
         "prepare": "Prepare/Parsons/Software-Developer-Intern_R185565_2026-09-03.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Parsons---R185565.pdf"
+      ]
     },
     {
       "id": "l-t-lnt-se-ls-1713751",
