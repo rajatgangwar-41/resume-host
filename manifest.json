@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:15:54Z",
+  "updated": "2026-09-07T11:15:55Z",
   "applications": [
     {
       "id": "incommon-1788741150",
@@ -69,23 +69,6 @@
       },
       "legacy": [
         "Antal-International---1788741154.pdf"
-      ]
-    },
-    {
-      "id": "infoskaters-ai-developer",
-      "tag": "Infoskaters - AI Developer",
-      "company": "Infoskaters",
-      "role": "AI Developer",
-      "jobId": "",
-      "date": "2026-09-04",
-      "files": {
-        "resume": "Company/Infoskaters/AI-Developer_2026-09-04.pdf",
-        "coverLetter": "Cover Letter/Infoskaters/AI-Developer_2026-09-04.pdf",
-        "linkedin": "LinkedIn/Infoskaters/AI-Developer_2026-09-04.txt",
-        "prepare": "Prepare/Infoskaters/AI-Developer_2026-09-04.pdf"
-      },
-      "legacy": [
-        "Infoskaters---AI-Developer.pdf"
       ]
     },
     {
@@ -407,6 +390,23 @@
       },
       "legacy": [
         "MindBridge---Associate-Gen-AI-Engineer.pdf"
+      ]
+    },
+    {
+      "id": "infoskaters-ai-developer",
+      "tag": "Infoskaters - AI Developer",
+      "company": "Infoskaters",
+      "role": "AI Developer",
+      "jobId": "2026-09-04",
+      "date": "",
+      "files": {
+        "resume": "Company/Infoskaters/AI-Developer_2026-09-04_.pdf",
+        "coverLetter": "Cover Letter/Infoskaters/AI-Developer_2026-09-04_.pdf",
+        "resumeP1": "Company/Infoskaters/AI-Developer_2026-09-04__P1.pdf",
+        "coverLetterP1": "Cover Letter/Infoskaters/AI-Developer_2026-09-04__P1.pdf"
+      },
+      "legacy": [
+        "Infoskaters---AI-Developer.pdf"
       ]
     }
   ],
