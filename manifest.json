@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:16Z",
+  "updated": "2026-09-07T09:41:17Z",
   "applications": [
     {
       "id": "appversal-1788708410",
@@ -38,6 +38,21 @@
       ]
     },
     {
+      "id": "best-trading-company-software-developer",
+      "tag": "Best Trading Company - Software Developer",
+      "company": "Best Trading Company",
+      "role": "Software Developer (WFH, Part Time)",
+      "jobId": "",
+      "date": "2026-09-04",
+      "files": {
+        "resume": "Company/Best-Trading-Company/Software-Developer-WFH-Part-Time_2026-09-04.pdf",
+        "coverLetter": "Cover Letter/Best-Trading-Company/Software-Developer-WFH-Part-Time_2026-09-04.pdf",
+        "linkedin": "LinkedIn/Best-Trading-Company/Software-Developer-WFH-Part-Time_2026-09-04.txt",
+        "prepare": "Prepare/Best-Trading-Company/Software-Developer-WFH-Part-Time_2026-09-04.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "barclays-jr-0000123867",
       "tag": "Barclays - JR-0000123867",
       "company": "Barclays",
@@ -50,7 +65,9 @@
         "linkedin": "LinkedIn/Barclays/Full-Stack-Engineer_JR-0000123867_2026-09-03.txt",
         "prepare": "Prepare/Barclays/Full-Stack-Engineer_JR-0000123867_2026-09-03.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Barclays---JR-0000123867.pdf"
+      ]
     }
   ],
   "general": []
