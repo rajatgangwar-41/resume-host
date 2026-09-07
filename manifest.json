@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:15:51Z",
+  "updated": "2026-09-07T11:15:52Z",
   "applications": [
     {
       "id": "incommon-1788741150",
@@ -69,23 +69,6 @@
       },
       "legacy": [
         "Antal-International---1788741154.pdf"
-      ]
-    },
-    {
-      "id": "sphinx-defense-full-stack-software-engineer",
-      "tag": "Sphinx Defense - Full Stack Software Engineer",
-      "company": "Sphinx Defense",
-      "role": "Full Stack Software Engineer",
-      "jobId": "",
-      "date": "2026-09-04",
-      "files": {
-        "resume": "Company/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.pdf",
-        "coverLetter": "Cover Letter/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.pdf",
-        "linkedin": "LinkedIn/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.txt",
-        "prepare": "Prepare/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.pdf"
-      },
-      "legacy": [
-        "Sphinx-Defense---Full-Stack-Software-Engineer.pdf"
       ]
     },
     {
@@ -373,6 +356,23 @@
       },
       "legacy": [
         "TopGrep-Tech---Software-Developer-Go-Rust.pdf"
+      ]
+    },
+    {
+      "id": "sphinx-defense-full-stack-software-engineer",
+      "tag": "Sphinx Defense - Full Stack Software Engineer",
+      "company": "Sphinx Defense",
+      "role": "Full Stack Software Engineer",
+      "jobId": "2026-09-04",
+      "date": "",
+      "files": {
+        "resume": "Company/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04_.pdf",
+        "coverLetter": "Cover Letter/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04_.pdf",
+        "resumeP1": "Company/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04__P1.pdf",
+        "coverLetterP1": "Cover Letter/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04__P1.pdf"
+      },
+      "legacy": [
+        "Sphinx-Defense---Full-Stack-Software-Engineer.pdf"
       ]
     },
     {
