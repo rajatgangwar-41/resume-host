@@ -43,8 +43,10 @@
   .tile .badge{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);background:var(--panel);color:var(--muted);margin-top:5px}
   .tile .badge.soon{color:var(--warn);border-color:rgba(178,106,0,.4)}
   .tile .count{position:absolute;top:10px;right:12px;font-size:11px;color:var(--muted);background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:1px 7px}
-  .tile .del{position:absolute;top:8px;left:8px;width:26px;height:26px;padding:0;border-radius:50%;line-height:24px;font-size:14px;display:none}
-  body.managing .tile.file .del{display:block}
+  .tile .del{position:absolute;top:8px;right:8px;width:30px;height:30px;padding:0;border-radius:8px;display:none;align-items:center;justify-content:center;background:var(--panel);border:1px solid rgba(192,57,43,.35);color:var(--danger)}
+  .tile .del svg{width:16px;height:16px;display:block;filter:none}
+  .tile .del:hover{background:rgba(192,57,43,.1);border-color:var(--danger)}
+  body.managing .tile.file .del{display:flex}
   .empty{color:var(--muted);font-size:13px;padding:50px 20px;text-align:center;background:var(--panel);border:1px dashed var(--border);border-radius:12px}
   .confirm{position:fixed;inset:0;background:rgba(20,23,28,.35);display:none;align-items:center;justify-content:center;z-index:20}
   .confirm.on{display:flex}
@@ -120,7 +122,7 @@
   function tileFile({path,name,sub,badge,soon,del}){
     const ext = path.toLowerCase().endsWith('.txt')?'txt':'pdf';
     return `<div class="tile file" tabindex="0" data-href="${href(path)}" ${del?`data-id="${esc(del.id)}" data-key="${esc(del.key)}" data-label="${esc(del.label)}"`:''}>
-      ${del?`<button class="danger del" title="Delete this file">✕</button>`:''}${ICON[ext]}
+      ${del?`<button class="del" title="Delete this file" aria-label="Delete this file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></button>`:''}${ICON[ext]}
       <div class="name">${esc(name)}</div>${sub?`<div class="sub">${esc(sub)}</div>`:''}${badge?`<span class="badge ${soon?'soon':''}">${esc(badge)}</span>`:''}</div>`;
   }
 
@@ -167,7 +169,7 @@
   function setManage(on){
     manageOn = on; document.body.classList.toggle('managing', on); $('#manage').classList.toggle('on', on);
     $('#manageBtn').textContent = on ? 'Done' : 'Manage'; $('#manageBtn').classList.toggle('on', on);
-    $('#manageState').textContent = token.get() ? 'Signed in — ✕ on a file deletes it.' : 'Not signed in — paste a token to enable delete.';
+    $('#manageState').textContent = token.get() ? 'Signed in — the dustbin on a file deletes it.' : 'Not signed in — paste a token to enable delete.';
     render();
   }
 
