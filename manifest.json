@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:16:03Z",
+  "updated": "2026-09-07T11:16:04Z",
   "applications": [
     {
       "id": "incommon-1788741150",
@@ -166,8 +166,7 @@
       "files": {
         "resume": "Company/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.pdf",
         "coverLetter": "Cover Letter/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.pdf",
-        "linkedin": "LinkedIn/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.txt",
-        "prepare": "Prepare/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.pdf"
+        "coverLetterP1": "Cover Letter/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03_P1.pdf"
       },
       "legacy": [
         "Fujitsu---11840.pdf"
