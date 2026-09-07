@@ -16,7 +16,9 @@
         "linkedin": "LinkedIn/AppVersal/Golang-Developer-Intern_1788708410_2026-09-07.txt",
         "prepare": "Prepare/AppVersal/Golang-Developer-Intern_1788708410_2026-09-07.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "AppVersal---1788708410.pdf"
+      ]
     },
     {
       "id": "antal-international-1788741154",
@@ -34,6 +36,21 @@
       "legacy": [
         "Antal-International---1788741154.pdf"
       ]
+    },
+    {
+      "id": "barclays-jr-0000123867",
+      "tag": "Barclays - JR-0000123867",
+      "company": "Barclays",
+      "role": "Full Stack Engineer",
+      "jobId": "JR-0000123867",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/Barclays/Full-Stack-Engineer_JR-0000123867_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/Barclays/Full-Stack-Engineer_JR-0000123867_2026-09-03.pdf",
+        "linkedin": "LinkedIn/Barclays/Full-Stack-Engineer_JR-0000123867_2026-09-03.txt",
+        "prepare": "Prepare/Barclays/Full-Stack-Engineer_JR-0000123867_2026-09-03.pdf"
+      },
+      "legacy": []
     }
   ],
   "general": []
