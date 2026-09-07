@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T10:38:18Z",
+  "updated": "2026-09-07T10:39:08Z",
   "applications": [
     {
       "id": "topgrep-tech-software-developer-go-rust",
@@ -428,12 +428,6 @@
       "name": "Rajat_Apply.pdf",
       "path": "Apply/Rajat_Apply.pdf",
       "date": "2026-01-01"
-    },
-    {
-      "folder": "Apply",
-      "name": "DeleteGeneralTest.pdf",
-      "path": "Apply/DeleteGeneralTest.pdf",
-      "date": "2026-09-01"
     }
   ]
 }
