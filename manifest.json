@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:22Z",
+  "updated": "2026-09-07T09:41:23Z",
   "applications": [
     {
       "id": "sjtech-solutions-artificial-intelligence-developer",
@@ -106,6 +106,21 @@
       ]
     },
     {
+      "id": "sphinx-defense-full-stack-software-engineer",
+      "tag": "Sphinx Defense - Full Stack Software Engineer",
+      "company": "Sphinx Defense",
+      "role": "Full Stack Software Engineer",
+      "jobId": "",
+      "date": "2026-09-04",
+      "files": {
+        "resume": "Company/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.pdf",
+        "coverLetter": "Cover Letter/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.pdf",
+        "linkedin": "LinkedIn/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.txt",
+        "prepare": "Prepare/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "simpli-intern-ai-executive",
       "tag": "Simpli-Intern - AI Executive",
       "company": "Simpli Intern",
@@ -118,7 +133,9 @@
         "linkedin": "LinkedIn/Simpli-Intern/Artificial-Intelligence-AI-Executive_2026-09-04.txt",
         "prepare": "Prepare/Simpli-Intern/Artificial-Intelligence-AI-Executive_2026-09-04.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Simpli-Intern---AI-Executive.pdf"
+      ]
     },
     {
       "id": "quickhyre-ai-associate",
