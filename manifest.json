@@ -50,7 +50,9 @@
         "linkedin": "LinkedIn/DataVinci/Junior-Analytics-Engineer_2026-09-04.txt",
         "prepare": "Prepare/DataVinci/Junior-Analytics-Engineer_2026-09-04.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "DataVinci---Junior-Analytics-Engineer.pdf"
+      ]
     },
     {
       "id": "best-trading-company-software-developer",
@@ -68,6 +70,21 @@
       "legacy": [
         "Best-Trading-Company---Software-Developer.pdf"
       ]
+    },
+    {
+      "id": "dentsu-sokrati-r1128610",
+      "tag": "Dentsu (Sokrati) - R1128610",
+      "company": "Dentsu (Sokrati)",
+      "role": "Developer",
+      "jobId": "R1128610",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/Dentsu-Sokrati/Developer_R1128610_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/Dentsu-Sokrati/Developer_R1128610_2026-09-03.pdf",
+        "linkedin": "LinkedIn/Dentsu-Sokrati/Developer_R1128610_2026-09-03.txt",
+        "prepare": "Prepare/Dentsu-Sokrati/Developer_R1128610_2026-09-03.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "bristol-myers-squibb-r1605676",
