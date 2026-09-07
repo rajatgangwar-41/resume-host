@@ -122,7 +122,10 @@
   }
   function tileFile({path,name,sub,badge,soon,del}){
     const ext = path.toLowerCase().endsWith('.txt')?'txt':'pdf';
-    return `<div class="tile file" tabindex="0" data-href="${href(path)}" ${del?`data-id="${esc(del.id)}" data-key="${esc(del.key)}" data-label="${esc(del.label)}"`:''}>
+    const delAttrs = del ? (del.kind==='general'
+      ? `data-del-kind="general" data-path="${esc(del.path)}" data-label="${esc(del.label)}"`
+      : `data-del-kind="app" data-id="${esc(del.id)}" data-key="${esc(del.key)}" data-label="${esc(del.label)}"`) : '';
+    return `<div class="tile file" tabindex="0" data-href="${href(path)}" ${delAttrs}>
       ${del?`<button class="del" title="Delete this file" aria-label="Delete this file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></button>`:''}${ICON[ext]}
       <div class="name">${esc(name)}</div>${sub?`<div class="sub">${esc(sub)}</div>`:''}${badge?`<span class="badge ${soon?'soon':''}">${esc(badge)}</span>`:''}</div>`;
   }
@@ -144,7 +147,7 @@
     } else if (folder.kind==='general'){
       crumbs.push(`<span class="sep">›</span><span class="cur">${esc(folder.name)}</span>`);
       const list = (manifest.general||[]).filter(g=>g.folder===folder.name && match(g.name));
-      html = list.map(g=>tileFile({path:g.path,name:g.name,sub:g.date?fmtDate(g.date):''})).join('');
+      html = list.map(g=>tileFile({path:g.path,name:g.name,sub:g.date?fmtDate(g.date):'',del:{kind:'general',path:g.path,label:`${g.folder} — ${g.name}`}})).join('');
     } else if (r.length===1){
       crumbs.push(`<span class="sep">›</span><span class="cur">${esc(folder.name)}</span>`);
       const byCo = new Map();
@@ -156,7 +159,7 @@
       const company = r[1];
       crumbs.push(`<span class="sep">›</span><a href="#/${encodeURIComponent(folder.name)}">${esc(folder.name)}</a><span class="sep">›</span><span class="cur">${esc(company)}</span>`);
       const list = apps().filter(a=>a.company===company && a.files&&a.files[folder.key] && match(a.role,a.jobId,a.tag)).sort((x,y)=>y.date.localeCompare(x.date));
-      html = list.map(a=>{ const left=daysLeft(a); return tileFile({path:a.files[folder.key], name:a.role||a.tag, sub:[a.jobId?`Job ID ${a.jobId}`:'', fmtDate(a.date)].filter(Boolean).join(' · '), badge: left>0?`expires in ${left}d`:'expiring', soon:left<=14, del:{id:a.id,key:folder.key,label:`${a.company} — ${a.role} (${folder.label})`}}); }).join('');
+      html = list.map(a=>{ const left=daysLeft(a); return tileFile({path:a.files[folder.key], name:a.role||a.tag, sub:[a.jobId?`Job ID ${a.jobId}`:'', fmtDate(a.date)].filter(Boolean).join(' · '), badge: left>0?`expires in ${left}d`:'expiring', soon:left<=14, del:{kind:'app',id:a.id,key:folder.key,label:`${a.company} — ${a.role} (${folder.label})`}}); }).join('');
       if (!list.length && !q){ location.hash = `#/${encodeURIComponent(folder.name)}`; return; }
     }
     if (r.length) crumbs.unshift(`<a class="back" href="#/${r.slice(0,-1).map(encodeURIComponent).join('/')}" title="Back">←</a>`);
@@ -178,33 +181,52 @@
     render();
   }
 
-  async function dispatchDelete(id, key){
-    const t = token.get(); if(!t){ toast('Save a token first.'); return; }
+  async function dispatchGitHub(eventType, payload){
+    const t = token.get(); if(!t){ toast('Save a token first.'); return false; }
     try{
       const r = await fetch(`https://api.github.com/repos/${REPO}/dispatches`, { method:'POST',
         headers:{ 'Authorization':`Bearer ${t}`, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json', 'X-GitHub-Api-Version':'2022-11-28' },
-        body: JSON.stringify({ event_type:'delete-application', client_payload:{ id, file:key } }) });
-      if (r.status === 204){
-        const a = manifest.applications.find(x=>x.id===id);
-        if (a){ delete a.files[key]; if (!Object.keys(a.files).length) a._deleted = true; }
-        toast('Deletion queued — the site updates in ~1–2 minutes.'); render();
-      } else toast(r.status===401||r.status===403 ? 'Token rejected (needs Contents: write on the repo).' : `GitHub API error ${r.status}.`);
-    }catch(e){ toast('Network error — try again.'); }
+        body: JSON.stringify({ event_type:eventType, client_payload:payload }) });
+      if (r.status === 204) return true;
+      toast(r.status===401||r.status===403 ? 'Token rejected (needs Contents: write on the repo).' : `GitHub API error ${r.status}.`);
+      return false;
+    }catch(e){ toast('Network error — try again.'); return false; }
+  }
+
+  async function dispatchDelete(id, key){
+    if (await dispatchGitHub('delete-application', { id, file:key })){
+      const a = manifest.applications.find(x=>x.id===id);
+      if (a){ delete a.files[key]; if (!Object.keys(a.files).length) a._deleted = true; }
+      toast('Deletion queued — the site updates in ~1–2 minutes.'); render();
+    }
+  }
+
+  async function dispatchDeleteGeneral(path){
+    if (await dispatchGitHub('delete-general', { path })){
+      manifest.general = (manifest.general||[]).filter(g=>g.path!==path);
+      toast('Deletion queued — the site updates in ~1–2 minutes.'); render();
+    }
   }
 
   $('#view').addEventListener('click', e => {
     const del = e.target.closest('.del');
     const tile = e.target.closest('.tile.file');
     if (del && tile){
-      e.preventDefault(); pending = {id:tile.dataset.id, key:tile.dataset.key};
-      $('#confirmText').innerHTML = `Delete <code>${esc(tile.dataset.label)}</code> from the hosted archive? This removes only this file; other documents of the application stay.`;
+      e.preventDefault();
+      if (tile.dataset.delKind === 'general'){
+        pending = {kind:'general', path:tile.dataset.path};
+        $('#confirmText').innerHTML = `Delete <code>${esc(tile.dataset.label)}</code> from the hosted archive? This file cannot be recovered.`;
+      } else {
+        pending = {kind:'app', id:tile.dataset.id, key:tile.dataset.key};
+        $('#confirmText').innerHTML = `Delete <code>${esc(tile.dataset.label)}</code> from the hosted archive? This removes only this file; other documents of the application stay.`;
+      }
       $('#confirm').classList.add('on'); return;
     }
     if (tile){ window.open(tile.dataset.href, '_blank', 'noopener'); }
   });
   $('#view').addEventListener('keydown', e => { const t=e.target.closest('.tile.file'); if(t && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); window.open(t.dataset.href,'_blank','noopener'); } });
   $('#cNo').addEventListener('click', ()=>{ pending=null; $('#confirm').classList.remove('on'); });
-  $('#cYes').addEventListener('click', ()=>{ const p=pending; pending=null; $('#confirm').classList.remove('on'); if(p) dispatchDelete(p.id,p.key); });
+  $('#cYes').addEventListener('click', ()=>{ const p=pending; pending=null; $('#confirm').classList.remove('on'); if(p){ if(p.kind==='general') dispatchDeleteGeneral(p.path); else dispatchDelete(p.id,p.key); } });
   $('#manageBtn').addEventListener('click', ()=>{
     if (token.get()){ token.set(''); refreshAuth(); toast('Signed out — delete buttons hidden.'); }
     else { $('#manage').classList.toggle('on'); if ($('#manage').classList.contains('on')) $('#token').focus(); }

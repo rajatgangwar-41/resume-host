@@ -6,11 +6,14 @@
 #   scripts/maintain.sh delete <id|TAG> [key]   delete one application (all its
 #                                         files), or only one file (key = resume|
 #                                         coverLetter|linkedin|prepare)
+#   scripts/maintain.sh delete-general <path>    delete one general document
+#                                         (Apply/Interview) by its manifest path
 #   scripts/maintain.sh reconcile         drop manifest refs whose files vanished,
 #                                         drop empty entries (run after every change)
 #
-# Exit 0 = ok. Prints what it removed. Never touches Apply/ or Interview/
-# (evergreen general documents) — only per-application entries expire.
+# Exit 0 = ok. Prints what it removed. General documents (Apply/Interview) are
+# never auto-pruned by age — only per-application entries expire — but they
+# CAN be deleted manually via delete-general (documents.html "Manage" button).
 set -eu
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 M="$ROOT/manifest.json"
@@ -43,6 +46,17 @@ case "$cmd" in
       fi
     else
       echo "no application with id '$id'"; exit 1
+    fi
+    ;;
+  delete-general)
+    path="${2:?usage: maintain.sh delete-general <path>}"
+    if jq -e --arg p "$path" '.general[] | select(.path==$p)' "$M" >/dev/null; then
+      echo "deleting general doc $path"
+      [ -e "$path" ] && { rm -f -- "$path"; echo "  removed $path"; }
+      d="$(dirname -- "$path")"; [ -d "$d" ] && rmdir --ignore-fail-on-non-empty -- "$d" 2>/dev/null || true
+      tmp="$(mktemp)"; jq --arg p "$path" 'del(.general[] | select(.path==$p))' "$M" > "$tmp" && mv "$tmp" "$M"
+    else
+      echo "no general doc with path '$path'"; exit 1
     fi
     ;;
   prune)

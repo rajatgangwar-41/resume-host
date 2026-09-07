@@ -2,12 +2,15 @@ name: maintain
 # Keeps the hosted archive clean:
 #  - daily: auto-delete applications older than retentionDays (90 = 3 months)
 #  - repository_dispatch "delete-application": the Delete button on documents.html
+#    for a Company/Cover Letter/LinkedIn/Prepare file
+#  - repository_dispatch "delete-general": the Delete button on documents.html
+#    for an Apply/Interview file
 #  - workflow_dispatch: manual prune / delete from the Actions tab
 on:
   schedule:
     - cron: "17 3 * * *"
   repository_dispatch:
-    types: [delete-application]
+    types: [delete-application, delete-general]
   workflow_dispatch:
     inputs:
       id:
@@ -16,6 +19,10 @@ on:
         default: ""
       file:
         description: "Optional: only this file (resume|coverLetter|linkedin|prepare)"
+        required: false
+        default: ""
+      generalPath:
+        description: "Path of a general doc (Apply/Interview) to delete instead"
         required: false
         default: ""
 permissions:
@@ -29,11 +36,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Delete requested application / file
-        if: github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.id != '')
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'delete-application' || (github.event_name == 'workflow_dispatch' && inputs.id != '')
         env:
           TARGET: ${{ github.event.client_payload.id || inputs.id }}
           KEY: ${{ github.event.client_payload.file || inputs.file }}
         run: bash scripts/maintain.sh delete "$TARGET" $KEY || true
+      - name: Delete requested general document
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'delete-general' || (github.event_name == 'workflow_dispatch' && inputs.generalPath != '')
+        env:
+          GPATH: ${{ github.event.client_payload.path || inputs.generalPath }}
+        run: bash scripts/maintain.sh delete-general "$GPATH" || true
       - name: Prune expired applications
         run: bash scripts/maintain.sh prune
       - name: Commit and push
