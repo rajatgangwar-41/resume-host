@@ -110,8 +110,8 @@
   // Top-level folders, same as the local workspace (minus Context/)
   const FOLDERS = [
     {name:'Apply',        kind:'general', key:null},
-    {name:'Company',      kind:'apps',    key:'resume',      label:'Resume'},
-    {name:'Cover Letter', kind:'apps',    key:'coverLetter', label:'Cover Letter'},
+    {name:'Company',      kind:'apps',    key:'resume',      p1Key:'resumeP1',      label:'Resume'},
+    {name:'Cover Letter', kind:'apps',    key:'coverLetter', p1Key:'coverLetterP1', label:'Cover Letter'},
     {name:'Interview',    kind:'general', key:null},
     {name:'LinkedIn',     kind:'apps',    key:'linkedin',    label:'LinkedIn Message'},
     {name:'Prepare',      kind:'apps',    key:'prepare',     label:'Learning Guide'},
@@ -174,7 +174,16 @@
       const company = r[1];
       crumbs.push(`<span class="sep">›</span><a href="#/${encodeURIComponent(folder.name)}">${esc(folder.name)}</a><span class="sep">›</span><span class="cur">${esc(company)}</span>`);
       const list = apps().filter(a=>a.company===company && a.files&&a.files[folder.key] && match(a.role,a.jobId,a.tag)).sort((x,y)=>y.date.localeCompare(x.date));
-      html = list.map(a=>{ const left=daysLeft(a); return tileFile({path:a.files[folder.key], name:a.role||a.tag, sub:[a.jobId?`Job ID ${a.jobId}`:'', fmtDate(a.date)].filter(Boolean).join(' · '), badge: left>0?`expires in ${left}d`:'expiring', soon:left<=14, del:{kind:'app',id:a.id,key:folder.key,label:`${a.company} — ${a.role} (${folder.label})`}}); }).join('');
+      html = list.map(a=>{
+        const left=daysLeft(a);
+        const sub=[a.jobId?`Job ID ${a.jobId}`:'', fmtDate(a.date)].filter(Boolean).join(' · ');
+        const badge = left>0?`expires in ${left}d`:'expiring';
+        let tiles = tileFile({path:a.files[folder.key], name:a.role||a.tag, sub, badge, soon:left<=14, del:{kind:'app',id:a.id,key:folder.key,label:`${a.company} — ${a.role} (${folder.label})`}});
+        if (folder.p1Key && a.files[folder.p1Key]){
+          tiles += tileFile({path:a.files[folder.p1Key], name:`${a.role||a.tag} (P1)`, sub, badge, soon:left<=14, del:{kind:'app',id:a.id,key:folder.p1Key,label:`${a.company} — ${a.role} (${folder.label}, P1)`}});
+        }
+        return tiles;
+      }).join('');
       if (!list.length && !q){ location.hash = `#/${encodeURIComponent(folder.name)}`; return; }
     }
     if (r.length) crumbs.unshift(`<a class="back" href="#/${r.slice(0,-1).map(encodeURIComponent).join('/')}" title="Back">←</a>`);
