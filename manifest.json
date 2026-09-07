@@ -118,7 +118,9 @@
         "linkedin": "LinkedIn/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.txt",
         "prepare": "Prepare/Sphinx-Defense/Full-Stack-Software-Engineer_2026-09-04.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Sphinx-Defense---Full-Stack-Software-Engineer.pdf"
+      ]
     },
     {
       "id": "simpli-intern-ai-executive",
@@ -204,6 +206,21 @@
       "legacy": [
         "Best-Trading-Company---Software-Developer.pdf"
       ]
+    },
+    {
+      "id": "tcs-4461694094",
+      "tag": "TCS - 4461694094",
+      "company": "TCS",
+      "role": "Senior .NET Full Stack Developer",
+      "jobId": "4461694094",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/TCS/Senior-NET-Full-Stack-Developer_4461694094_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/TCS/Senior-NET-Full-Stack-Developer_4461694094_2026-09-03.pdf",
+        "linkedin": "LinkedIn/TCS/Senior-NET-Full-Stack-Developer_4461694094_2026-09-03.txt",
+        "prepare": "Prepare/TCS/Senior-NET-Full-Stack-Developer_4461694094_2026-09-03.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "propsoch-frontend-engineer",
