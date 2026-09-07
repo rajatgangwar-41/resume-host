@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:52:11Z",
+  "updated": "2026-09-07T10:09:06Z",
   "applications": [
     {
       "id": "topgrep-tech-software-developer-go-rust",
@@ -19,6 +19,19 @@
       "legacy": [
         "TopGrep-Tech---Software-Developer-Go-Rust.pdf"
       ]
+    },
+    {
+      "id": "test-delete-me",
+      "tag": "Test - Delete Me",
+      "company": "Test",
+      "role": "Delete Me",
+      "jobId": "0000",
+      "date": "2026-09-07",
+      "files": {
+        "resume": "Company/Test/Delete-Me_0000_2026-09-07.pdf",
+        "coverLetter": "Cover Letter/Test/Delete-Me_0000_2026-09-07.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "sjtech-solutions-artificial-intelligence-developer",
