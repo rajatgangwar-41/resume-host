@@ -64,17 +64,17 @@
     <a class="brand" href="./"><span class="dot"></span> rajatgangwar-resume</a>
     <div class="tools">
       <input type="search" id="q" placeholder="Search this folder…" aria-label="Search">
-      <button id="manageBtn" title="Owner tools: delete files">Manage</button>
+      <button id="manageBtn"></button>
     </div>
   </div>
 
   <div class="wrap">
     <div class="manage" id="manage">
-      <span id="manageState">Not signed in.</span>
+      <span>Paste a GitHub token once to enable delete buttons in this browser.</span>
       <input type="password" id="token" placeholder="GitHub fine-grained token" autocomplete="off">
       <button class="primary" id="saveToken">Save token</button>
-      <button id="clearToken">Sign out</button>
-      <span class="hint">Token needs <b>Contents: read &amp; write</b> on <code>rajatgangwar-41/resume-host</code> only. Stored in this browser's localStorage, sent only to api.github.com. A delete queues the <code>maintain</code> workflow; the site updates ~1–2 minutes later. Everything older than <span id="retention">90</span> days is removed automatically.</span>
+      <button id="cancelToken">Cancel</button>
+      <span class="hint">Token needs <b>Contents: read &amp; write</b> on <code>rajatgangwar-41/resume-host</code> only. It is stored only in this browser and sent only to api.github.com. A delete queues the <code>maintain</code> workflow; the site updates ~1–2 minutes later. Everything older than <span id="retention">90</span> days is removed automatically.</span>
     </div>
 
     <nav class="crumbs" id="crumbs"></nav>
@@ -107,7 +107,7 @@
   const FILE_SVG = (ext, color) => `<svg viewBox="0 0 96 80" aria-hidden="true"><path d="M26 4h30l18 18v52a4 4 0 0 1-4 4H26a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" fill="#fff" stroke="#c9ced6"/><path d="M56 4v18h18z" fill="#e3e7ec"/><rect x="22" y="48" width="52" height="20" rx="3" fill="${color}"/><text x="48" y="62.5" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">${ext}</text><rect x="32" y="20" width="26" height="3" rx="1.5" fill="#dfe3e8"/><rect x="32" y="28" width="32" height="3" rx="1.5" fill="#dfe3e8"/><rect x="32" y="36" width="20" height="3" rx="1.5" fill="#dfe3e8"/></svg>`;
   const ICON = { pdf: FILE_SVG('PDF','#d64545'), txt: FILE_SVG('TXT','#5b6b80') };
 
-  let manifest = null, manageOn = false, pending = null;
+  let manifest = null, pending = null;
   const token = { get(){ try{return localStorage.getItem('rh_token')||''}catch(e){return ''} },
                   set(v){ try{ v?localStorage.setItem('rh_token',v):localStorage.removeItem('rh_token') }catch(e){} } };
   const toast = msg => { const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),3200); };
@@ -166,10 +166,14 @@
     $('#retention').textContent = manifest.retentionDays||90;
   }
 
-  function setManage(on){
-    manageOn = on; document.body.classList.toggle('managing', on); $('#manage').classList.toggle('on', on);
-    $('#manageBtn').textContent = on ? 'Done' : 'Manage'; $('#manageBtn').classList.toggle('on', on);
-    $('#manageState').textContent = token.get() ? 'Signed in — the dustbin on a file deletes it.' : 'Not signed in — paste a token to enable delete.';
+  function refreshAuth(){
+    const signed = !!token.get();
+    document.body.classList.toggle('managing', signed);
+    const b = $('#manageBtn');
+    b.textContent = signed ? 'Sign out' : 'Enable delete';
+    b.title = signed ? 'Forget the saved token in this browser (delete buttons disappear)' : 'Paste a GitHub token once to show delete buttons';
+    b.classList.toggle('on', signed);
+    if (signed) $('#manage').classList.remove('on');
     render();
   }
 
@@ -200,13 +204,17 @@
   $('#view').addEventListener('keydown', e => { const t=e.target.closest('.tile.file'); if(t && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); window.open(t.dataset.href,'_blank','noopener'); } });
   $('#cNo').addEventListener('click', ()=>{ pending=null; $('#confirm').classList.remove('on'); });
   $('#cYes').addEventListener('click', ()=>{ const p=pending; pending=null; $('#confirm').classList.remove('on'); if(p) dispatchDelete(p.id,p.key); });
-  $('#manageBtn').addEventListener('click', ()=> setManage(!manageOn));
-  $('#saveToken').addEventListener('click', ()=>{ const v=$('#token').value.trim(); if(!v){toast('Paste a token first.');return;} token.set(v); $('#token').value=''; setManage(true); toast('Token saved in this browser.'); });
-  $('#clearToken').addEventListener('click', ()=>{ token.set(''); setManage(true); toast('Signed out.'); });
+  $('#manageBtn').addEventListener('click', ()=>{
+    if (token.get()){ token.set(''); refreshAuth(); toast('Signed out — delete buttons hidden.'); }
+    else { $('#manage').classList.toggle('on'); if ($('#manage').classList.contains('on')) $('#token').focus(); }
+  });
+  $('#saveToken').addEventListener('click', ()=>{ const v=$('#token').value.trim(); if(!v){toast('Paste a token first.');return;} token.set(v); $('#token').value=''; refreshAuth(); toast('Token saved — delete buttons are now on every file.'); });
+  $('#token').addEventListener('keydown', e=>{ if(e.key==='Enter') $('#saveToken').click(); });
+  $('#cancelToken').addEventListener('click', ()=> $('#manage').classList.remove('on'));
   $('#q').addEventListener('input', render);
   window.addEventListener('hashchange', ()=>{ $('#q').value=''; render(); });
 
-  fetch('manifest.json?t=' + Date.now(), {cache:'no-store'}).then(r=>r.json()).then(m=>{ manifest=m; render(); })
+  fetch('manifest.json?t=' + Date.now(), {cache:'no-store'}).then(r=>r.json()).then(m=>{ manifest=m; refreshAuth(); })
     .catch(()=>{ $('#view').innerHTML='<div class="empty">Could not load manifest.json.</div>'; });
 })();
 </script>
