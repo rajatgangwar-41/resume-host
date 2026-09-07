@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:15:53Z",
+  "updated": "2026-09-07T11:15:54Z",
   "applications": [
     {
       "id": "incommon-1788741150",
@@ -69,23 +69,6 @@
       },
       "legacy": [
         "Antal-International---1788741154.pdf"
-      ]
-    },
-    {
-      "id": "quickhyre-ai-associate",
-      "tag": "QuickHyre - AI Associate",
-      "company": "QuickHyre",
-      "role": "Artificial Intelligence (AI) Associate",
-      "jobId": "",
-      "date": "2026-09-04",
-      "files": {
-        "resume": "Company/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.pdf",
-        "coverLetter": "Cover Letter/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.pdf",
-        "linkedin": "LinkedIn/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.txt",
-        "prepare": "Prepare/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.pdf"
-      },
-      "legacy": [
-        "QuickHyre---AI-Associate.pdf"
       ]
     },
     {
@@ -390,6 +373,23 @@
       },
       "legacy": [
         "SJTech-Solutions---Artificial-Intelligence-Developer.pdf"
+      ]
+    },
+    {
+      "id": "quickhyre-ai-associate",
+      "tag": "QuickHyre - AI Associate",
+      "company": "QuickHyre",
+      "role": "Artificial Intelligence (AI) Associate",
+      "jobId": "2026-09-04",
+      "date": "",
+      "files": {
+        "resume": "Company/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04_.pdf",
+        "coverLetter": "Cover Letter/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04_.pdf",
+        "resumeP1": "Company/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04__P1.pdf",
+        "coverLetterP1": "Cover Letter/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04__P1.pdf"
+      },
+      "legacy": [
+        "QuickHyre---AI-Associate.pdf"
       ]
     },
     {
