@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:15:55Z",
+  "updated": "2026-09-07T11:15:56Z",
   "applications": [
     {
       "id": "incommon-1788741150",
@@ -69,23 +69,6 @@
       },
       "legacy": [
         "Antal-International---1788741154.pdf"
-      ]
-    },
-    {
-      "id": "datavinci-junior-analytics-engineer",
-      "tag": "DataVinci - Junior Analytics Engineer",
-      "company": "DataVinci",
-      "role": "Junior Analytics Engineer",
-      "jobId": "",
-      "date": "2026-09-04",
-      "files": {
-        "resume": "Company/DataVinci/Junior-Analytics-Engineer_2026-09-04.pdf",
-        "coverLetter": "Cover Letter/DataVinci/Junior-Analytics-Engineer_2026-09-04.pdf",
-        "linkedin": "LinkedIn/DataVinci/Junior-Analytics-Engineer_2026-09-04.txt",
-        "prepare": "Prepare/DataVinci/Junior-Analytics-Engineer_2026-09-04.pdf"
-      },
-      "legacy": [
-        "DataVinci---Junior-Analytics-Engineer.pdf"
       ]
     },
     {
@@ -407,6 +390,23 @@
       },
       "legacy": [
         "Infoskaters---AI-Developer.pdf"
+      ]
+    },
+    {
+      "id": "datavinci-junior-analytics-engineer",
+      "tag": "DataVinci - Junior Analytics Engineer",
+      "company": "DataVinci",
+      "role": "Junior Analytics Engineer",
+      "jobId": "2026-09-04",
+      "date": "",
+      "files": {
+        "resume": "Company/DataVinci/Junior-Analytics-Engineer_2026-09-04_.pdf",
+        "coverLetter": "Cover Letter/DataVinci/Junior-Analytics-Engineer_2026-09-04_.pdf",
+        "resumeP1": "Company/DataVinci/Junior-Analytics-Engineer_2026-09-04__P1.pdf",
+        "coverLetterP1": "Cover Letter/DataVinci/Junior-Analytics-Engineer_2026-09-04__P1.pdf"
+      },
+      "legacy": [
+        "DataVinci---Junior-Analytics-Engineer.pdf"
       ]
     }
   ],
