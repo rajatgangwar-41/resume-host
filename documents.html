@@ -224,9 +224,10 @@
   }
 
   async function dispatchDeleteFolder(ids){
-    let ok = 0;
-    for (const id of ids){ if (await dispatchGitHub('delete-application', { id })){ const a=manifest.applications.find(x=>x.id===id); if(a) a._deleted=true; ok++; } }
-    if (ok){ toast(`Deletion queued for ${ok} application${ok>1?'s':''} — the site updates in ~1–2 minutes.`); render(); }
+    if (await dispatchGitHub('delete-application', { id: ids.join(',') })){
+      for (const id of ids){ const a=manifest.applications.find(x=>x.id===id); if(a) a._deleted=true; }
+      toast(`Deletion queued for ${ids.length} application${ids.length>1?'s':''} — the site updates in ~1–2 minutes.`); render();
+    }
   }
 
   let menuTarget = null;

@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       id:
-        description: "Application id (or TAG) to delete; empty = prune only"
+        description: "Application id (or TAG) to delete (comma-separated for multiple); empty = prune only"
         required: false
         default: ""
       file:
@@ -35,12 +35,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Delete requested application / file
+      - name: Delete requested application(s) / file
         if: github.event_name == 'repository_dispatch' && github.event.action == 'delete-application' || (github.event_name == 'workflow_dispatch' && inputs.id != '')
         env:
-          TARGET: ${{ github.event.client_payload.id || inputs.id }}
+          TARGETS: ${{ github.event.client_payload.id || inputs.id }}
           KEY: ${{ github.event.client_payload.file || inputs.file }}
-        run: bash scripts/maintain.sh delete "$TARGET" $KEY || true
+        run: |
+          IFS=',' read -ra IDS <<< "$TARGETS"
+          for id in "${IDS[@]}"; do bash scripts/maintain.sh delete "$id" $KEY || true; done
       - name: Delete requested general document
         if: github.event_name == 'repository_dispatch' && github.event.action == 'delete-general' || (github.event_name == 'workflow_dispatch' && inputs.generalPath != '')
         env:
@@ -48,11 +50,18 @@ jobs:
         run: bash scripts/maintain.sh delete-general "$GPATH" || true
       - name: Prune expired applications
         run: bash scripts/maintain.sh prune
-      - name: Commit and push
+      - name: Commit and push (retry on race with another run)
         run: |
           git config user.name  "resume-host bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then echo "nothing changed"; exit 0; fi
           git commit -m "maintain: ${{ github.event_name }} $(date -u +%F)"
-          git push
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "push rejected, rebasing onto origin/main and retrying ($i)..."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; git reset --soft origin/main; git add -A; git commit -m "maintain: ${{ github.event_name }} $(date -u +%F) (reapplied)"; }
+            sleep $((RANDOM % 5 + 1))
+          done
+          echo "::error::push failed after retries"; exit 1
