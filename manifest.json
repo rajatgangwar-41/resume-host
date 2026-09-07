@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:15:47Z",
+  "updated": "2026-09-07T11:15:48Z",
   "applications": [
     {
       "id": "incommon-1788741150",
@@ -30,8 +30,8 @@
       "files": {
         "resume": "Company/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.pdf",
         "coverLetter": "Cover Letter/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.pdf",
-        "linkedin": "LinkedIn/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.txt",
-        "prepare": "Prepare/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.pdf"
+        "resumeP1": "Company/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07_P1.pdf",
+        "coverLetterP1": "Cover Letter/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07_P1.pdf"
       },
       "legacy": [
         "EcoRatings---1788568255.pdf"
