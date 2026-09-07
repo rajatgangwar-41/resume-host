@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:24Z",
+  "updated": "2026-09-07T09:41:25Z",
   "applications": [
     {
       "id": "topgrep-tech-software-developer-go-rust",
@@ -16,7 +16,9 @@
         "linkedin": "LinkedIn/TopGrep-Tech/Software-Developer-Go-Rust_2026-09-07.txt",
         "prepare": "Prepare/TopGrep-Tech/Software-Developer-Go-Rust_2026-09-07.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "TopGrep-Tech---Software-Developer-Go-Rust.pdf"
+      ]
     },
     {
       "id": "sjtech-solutions-artificial-intelligence-developer",
@@ -119,6 +121,21 @@
       "legacy": [
         "Antal-International---1788741154.pdf"
       ]
+    },
+    {
+      "id": "warewe-full-stack-developer",
+      "tag": "Warewe - Full Stack Developer",
+      "company": "Warewe",
+      "role": "Full Stack Developer",
+      "jobId": "",
+      "date": "2026-09-04",
+      "files": {
+        "resume": "Company/Warewe/Full-Stack-Developer_2026-09-04.pdf",
+        "coverLetter": "Cover Letter/Warewe/Full-Stack-Developer_2026-09-04.pdf",
+        "linkedin": "LinkedIn/Warewe/Full-Stack-Developer_2026-09-04.txt",
+        "prepare": "Prepare/Warewe/Full-Stack-Developer_2026-09-04.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "sphinx-defense-full-stack-software-engineer",
