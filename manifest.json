@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:21Z",
+  "updated": "2026-09-07T09:41:22Z",
   "applications": [
     {
       "id": "sjtech-solutions-artificial-intelligence-developer",
@@ -16,7 +16,9 @@
         "linkedin": "LinkedIn/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.txt",
         "prepare": "Prepare/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "SJTech-Solutions---Artificial-Intelligence-Developer.pdf"
+      ]
     },
     {
       "id": "mindbridge-associate-gen-ai-engineer",
@@ -102,6 +104,21 @@
       "legacy": [
         "Antal-International---1788741154.pdf"
       ]
+    },
+    {
+      "id": "simpli-intern-ai-executive",
+      "tag": "Simpli-Intern - AI Executive",
+      "company": "Simpli Intern",
+      "role": "Artificial Intelligence (AI) Executive",
+      "jobId": "",
+      "date": "2026-09-04",
+      "files": {
+        "resume": "Company/Simpli-Intern/Artificial-Intelligence-AI-Executive_2026-09-04.pdf",
+        "coverLetter": "Cover Letter/Simpli-Intern/Artificial-Intelligence-AI-Executive_2026-09-04.pdf",
+        "linkedin": "LinkedIn/Simpli-Intern/Artificial-Intelligence-AI-Executive_2026-09-04.txt",
+        "prepare": "Prepare/Simpli-Intern/Artificial-Intelligence-AI-Executive_2026-09-04.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "quickhyre-ai-associate",
