@@ -47,6 +47,15 @@
   .tile .del{position:absolute;top:8px;right:8px;width:30px;height:30px;padding:0;border-radius:8px;display:none;align-items:center;justify-content:center;background:var(--panel);border:1px solid rgba(192,57,43,.35);color:var(--danger)}
   .tile .del svg{width:16px;height:16px;display:block;filter:none}
   .tile .del:hover{background:rgba(192,57,43,.1);border-color:var(--danger)}
+  .tile .menu-btn{position:absolute;top:8px;right:8px;width:28px;height:28px;padding:0;border-radius:8px;display:none;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--border);color:var(--muted)}
+  .tile .menu-btn svg{width:16px;height:16px;display:block;filter:none}
+  .tile .menu-btn:hover{background:var(--panel-2);color:var(--text)}
+  body.managing .tile.folder.deletable .menu-btn{display:flex}
+  .menu{position:fixed;min-width:170px;background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.18);padding:5px;z-index:15;display:none}
+  .menu.on{display:block}
+  .menu button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:8px 10px;border:none;border-radius:7px;background:transparent;font-size:13px;color:var(--danger)}
+  .menu button:hover{background:rgba(192,57,43,.08)}
+  .menu button svg{width:15px;height:15px;flex-shrink:0}
   body.managing .tile.file .del{display:flex}
   .empty{color:var(--muted);font-size:13px;padding:50px 20px;text-align:center;background:var(--panel);border:1px dashed var(--border);border-radius:12px}
   .confirm{position:fixed;inset:0;background:rgba(20,23,28,.35);display:none;align-items:center;justify-content:center;z-index:20}
@@ -87,6 +96,9 @@
     <div id="confirmText"></div>
     <div class="row"><button id="cNo">Cancel</button><button class="danger" id="cYes">Delete</button></div>
   </div></div>
+  <div class="menu" id="folderMenu">
+    <button id="folderMenuDelete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>Delete company</button>
+  </div>
   <div class="toast" id="toast"></div>
 
 <script>
@@ -117,8 +129,11 @@
   const apps = () => (manifest.applications||[]).filter(a=>!a._deleted);
   const route = () => decodeURIComponent(location.hash.replace(/^#\/?/,'')).split('/').filter(Boolean);
 
-  function tileFolder(name, count, hash, sub){
-    return `<a class="tile folder" href="#/${hash}">${count!=null?`<span class="count">${count}</span>`:''}${FOLDER_SVG}<div class="name">${esc(name)}</div>${sub?`<div class="sub">${esc(sub)}</div>`:''}</a>`;
+  const DOTS_SVG = `<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>`;
+  function tileFolder(name, count, hash, sub, del){
+    const cls = del ? 'tile folder deletable' : 'tile folder';
+    const menuBtn = del ? `<button class="menu-btn" title="Options" aria-label="Options" data-ids="${esc(del.ids.join(','))}" data-label="${esc(del.label)}" onclick="event.preventDefault();event.stopPropagation();window.__openFolderMenu(this)">${DOTS_SVG}</button>` : '';
+    return `<a class="${cls}" href="#/${hash}">${count!=null?`<span class="count">${count}</span>`:''}${menuBtn}${FOLDER_SVG}<div class="name">${esc(name)}</div>${sub?`<div class="sub">${esc(sub)}</div>`:''}</a>`;
   }
   function tileFile({path,name,sub,badge,soon,del}){
     const ext = path.toLowerCase().endsWith('.txt')?'txt':'pdf';
@@ -153,7 +168,7 @@
       const byCo = new Map();
       for (const a of apps()) if (a.files&&a.files[folder.key]) { if(!byCo.has(a.company)) byCo.set(a.company,[]); byCo.get(a.company).push(a); }
       const cos = [...byCo.entries()].filter(([c])=>match(c)).sort((x,y)=>x[0].localeCompare(y[0]));
-      html = cos.map(([c,list])=>tileFolder(c, list.length, `${encodeURIComponent(folder.name)}/${encodeURIComponent(c)}`, `latest ${fmtDate(list.map(a=>a.date).sort().pop())}`)).join('');
+      html = cos.map(([c,list])=>tileFolder(c, list.length, `${encodeURIComponent(folder.name)}/${encodeURIComponent(c)}`, `latest ${fmtDate(list.map(a=>a.date).sort().pop())}`, {ids:list.map(a=>a.id), label:c})).join('');
       foot = `${cos.length} companies · click a company to open its ${folder.label.toLowerCase()} files`;
     } else {
       const company = r[1];
@@ -208,6 +223,22 @@
     }
   }
 
+  async function dispatchDeleteFolder(ids){
+    let ok = 0;
+    for (const id of ids){ if (await dispatchGitHub('delete-application', { id })){ const a=manifest.applications.find(x=>x.id===id); if(a) a._deleted=true; ok++; } }
+    if (ok){ toast(`Deletion queued for ${ok} application${ok>1?'s':''} — the site updates in ~1–2 minutes.`); render(); }
+  }
+
+  let menuTarget = null;
+  window.__openFolderMenu = function(btn){
+    menuTarget = { ids: btn.dataset.ids.split(',').filter(Boolean), label: btn.dataset.label };
+    const m = $('#folderMenu'), r = btn.getBoundingClientRect();
+    m.style.top = `${r.bottom + 4}px`; m.style.left = `${Math.max(8, r.right - 170)}px`;
+    m.classList.add('on');
+    const closeOnce = ev => { if(!m.contains(ev.target)){ m.classList.remove('on'); document.removeEventListener('click', closeOnce, true); } };
+    setTimeout(()=>document.addEventListener('click', closeOnce, true), 0);
+  };
+
   $('#view').addEventListener('click', e => {
     const del = e.target.closest('.del');
     const tile = e.target.closest('.tile.file');
@@ -226,7 +257,14 @@
   });
   $('#view').addEventListener('keydown', e => { const t=e.target.closest('.tile.file'); if(t && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); window.open(t.dataset.href,'_blank','noopener'); } });
   $('#cNo').addEventListener('click', ()=>{ pending=null; $('#confirm').classList.remove('on'); });
-  $('#cYes').addEventListener('click', ()=>{ const p=pending; pending=null; $('#confirm').classList.remove('on'); if(p){ if(p.kind==='general') dispatchDeleteGeneral(p.path); else dispatchDelete(p.id,p.key); } });
+  $('#cYes').addEventListener('click', ()=>{ const p=pending; pending=null; $('#confirm').classList.remove('on'); if(p){ if(p.kind==='general') dispatchDeleteGeneral(p.path); else if(p.kind==='folder') dispatchDeleteFolder(p.ids); else dispatchDelete(p.id,p.key); } });
+  $('#folderMenuDelete').addEventListener('click', ()=>{
+    $('#folderMenu').classList.remove('on');
+    const t = menuTarget; if(!t) return;
+    pending = {kind:'folder', ids:t.ids};
+    $('#confirmText').innerHTML = `Delete <code>${esc(t.label)}</code> entirely from the hosted archive? This removes its resume, cover letter, LinkedIn message and learning guide everywhere — not just in this folder. This cannot be undone.`;
+    $('#confirm').classList.add('on');
+  });
   $('#manageBtn').addEventListener('click', ()=>{
     if (token.get()){ token.set(''); refreshAuth(); toast('Signed out — delete buttons hidden.'); }
     else { $('#manage').classList.toggle('on'); if ($('#manage').classList.contains('on')) $('#token').focus(); }
