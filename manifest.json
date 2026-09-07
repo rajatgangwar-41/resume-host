@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T10:54:07Z",
+  "updated": "2026-09-07T10:58:29Z",
   "applications": [
     {
       "id": "topgrep-tech-software-developer-go-rust",
@@ -53,18 +53,6 @@
       "legacy": [
         "MindBridge---Associate-Gen-AI-Engineer.pdf"
       ]
-    },
-    {
-      "id": "menutest-jobb",
-      "tag": "MenuTest - JobB",
-      "company": "MenuTest Co",
-      "role": "Role B",
-      "jobId": "BBB",
-      "date": "2026-09-07",
-      "files": {
-        "resume": "Company/MenuTest-Co/Role-B_BBB_2026-09-07.pdf"
-      },
-      "legacy": []
     },
     {
       "id": "incommon-1788741150",
