@@ -4,6 +4,21 @@
   "updated": "2026-09-07T09:41:21Z",
   "applications": [
     {
+      "id": "sjtech-solutions-artificial-intelligence-developer",
+      "tag": "SJTech Solutions - Artificial Intelligence Developer",
+      "company": "SJTech Solutions",
+      "role": "Artificial Intelligence Developer",
+      "jobId": "",
+      "date": "2026-09-07",
+      "files": {
+        "resume": "Company/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.pdf",
+        "coverLetter": "Cover Letter/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.pdf",
+        "linkedin": "LinkedIn/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.txt",
+        "prepare": "Prepare/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "mindbridge-associate-gen-ai-engineer",
       "tag": "MindBridge - Associate Gen AI Engineer",
       "company": "MindBridge",
@@ -101,7 +116,9 @@
         "linkedin": "LinkedIn/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.txt",
         "prepare": "Prepare/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "QuickHyre---AI-Associate.pdf"
+      ]
     },
     {
       "id": "infoskaters-ai-developer",
