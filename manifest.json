@@ -89,6 +89,21 @@
       ]
     },
     {
+      "id": "harmonic-260140",
+      "tag": "Harmonic - 260140",
+      "company": "Harmonic",
+      "role": "Associate SW Development Engineer",
+      "jobId": "260140",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/Harmonic/Associate-SW-Development-Engineer_260140_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/Harmonic/Associate-SW-Development-Engineer_260140_2026-09-03.pdf",
+        "linkedin": "LinkedIn/Harmonic/Associate-SW-Development-Engineer_260140_2026-09-03.txt",
+        "prepare": "Prepare/Harmonic/Associate-SW-Development-Engineer_260140_2026-09-03.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "fujitsu-11840",
       "tag": "Fujitsu - 11840",
       "company": "Fujitsu",
@@ -101,7 +116,9 @@
         "linkedin": "LinkedIn/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.txt",
         "prepare": "Prepare/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Fujitsu---11840.pdf"
+      ]
     },
     {
       "id": "dentsu-sokrati-r1128610",

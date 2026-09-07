@@ -1,0 +1,30 @@
+Subject: Referral Request — Systems / Embedded Software Engineering at Harmonic Inc.
+
+Hi {{NAME}},
+
+I came across your profile at Harmonic Inc. and really liked what you're
+building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef
+programmer (peak 2212) with 1000+ DSA problems solved in C++. I've built
+multiple production-grade AI SaaS products end to end — including a
+multi-tenant B2B AI chatbot platform with RAG and voice support — and I
+currently ship React Native / Next.js products to 1300+ users as an SDE
+Intern at Clink AI.
+
+I'm actively exploring Systems / Embedded Software Engineering roles. Would
+you be open to referring me for this role at Harmonic Inc.? It would mean
+a lot.
+
+Role I'm applying for: https://egmn.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Harmonic/job/260140
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Harmonic---260140.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+File Manager API (dual backend, raw Node.js vs Express): https://project-node-sp-google-drive.vercel.app
+
+Thanks for your time,
+Rajat Gangwar
++91-8601961513 | rajat.gangwar141@gmail.com
