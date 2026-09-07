@@ -180,10 +180,11 @@
         const badge = left>0?`expires in ${left}d`:'expiring';
         const hasP1 = folder.p1Key && a.files[folder.p1Key];
         const p2Name = hasP1 ? `${a.role||a.tag} (P2)` : (a.role||a.tag);
-        let tiles = tileFile({path:a.files[folder.key], name:p2Name, sub, badge, soon:left<=14, del:{kind:'app',id:a.id,key:folder.key,label:`${a.company} — ${a.role} (${folder.label}${hasP1?', P2':''})`}});
+        let tiles = '';
         if (hasP1){
           tiles += tileFile({path:a.files[folder.p1Key], name:`${a.role||a.tag} (P1)`, sub, badge, soon:left<=14, del:{kind:'app',id:a.id,key:folder.p1Key,label:`${a.company} — ${a.role} (${folder.label}, P1)`}});
         }
+        tiles += tileFile({path:a.files[folder.key], name:p2Name, sub, badge, soon:left<=14, del:{kind:'app',id:a.id,key:folder.key,label:`${a.company} — ${a.role} (${folder.label}${hasP1?', P2':''})`}});
         return tiles;
       }).join('');
       if (!list.length && !q){ location.hash = `#/${encodeURIComponent(folder.name)}`; return; }
