@@ -1,25 +1,8 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:15:44Z",
+  "updated": "2026-09-07T11:15:45Z",
   "applications": [
-    {
-      "id": "sjtech-solutions-artificial-intelligence-developer",
-      "tag": "SJTech Solutions - Artificial Intelligence Developer",
-      "company": "SJTech Solutions",
-      "role": "Artificial Intelligence Developer",
-      "jobId": "",
-      "date": "2026-09-07",
-      "files": {
-        "resume": "Company/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.pdf",
-        "coverLetter": "Cover Letter/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.pdf",
-        "linkedin": "LinkedIn/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.txt",
-        "prepare": "Prepare/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07.pdf"
-      },
-      "legacy": [
-        "SJTech-Solutions---Artificial-Intelligence-Developer.pdf"
-      ]
-    },
     {
       "id": "mindbridge-associate-gen-ai-engineer",
       "tag": "MindBridge - Associate Gen AI Engineer",
@@ -407,6 +390,23 @@
       },
       "legacy": [
         "TopGrep-Tech---Software-Developer-Go-Rust.pdf"
+      ]
+    },
+    {
+      "id": "sjtech-solutions-artificial-intelligence-developer",
+      "tag": "SJTech Solutions - Artificial Intelligence Developer",
+      "company": "SJTech Solutions",
+      "role": "Artificial Intelligence Developer",
+      "jobId": "2026-09-07",
+      "date": "",
+      "files": {
+        "resume": "Company/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07_.pdf",
+        "coverLetter": "Cover Letter/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07_.pdf",
+        "resumeP1": "Company/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07__P1.pdf",
+        "coverLetterP1": "Cover Letter/SJTech-Solutions/Artificial-Intelligence-Developer_2026-09-07__P1.pdf"
+      },
+      "legacy": [
+        "SJTech-Solutions---Artificial-Intelligence-Developer.pdf"
       ]
     }
   ],
