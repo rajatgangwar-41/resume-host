@@ -1,8 +1,23 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:19Z",
+  "updated": "2026-09-07T09:41:20Z",
   "applications": [
+    {
+      "id": "mindbridge-associate-gen-ai-engineer",
+      "tag": "MindBridge - Associate Gen AI Engineer",
+      "company": "MindBridge",
+      "role": "Associate Gen AI Engineer",
+      "jobId": "",
+      "date": "2026-09-07",
+      "files": {
+        "resume": "Company/MindBridge/Associate-Gen-AI-Engineer_2026-09-07.pdf",
+        "coverLetter": "Cover Letter/MindBridge/Associate-Gen-AI-Engineer_2026-09-07.pdf",
+        "linkedin": "LinkedIn/MindBridge/Associate-Gen-AI-Engineer_2026-09-07.txt",
+        "prepare": "Prepare/MindBridge/Associate-Gen-AI-Engineer_2026-09-07.pdf"
+      },
+      "legacy": []
+    },
     {
       "id": "incommon-1788741150",
       "tag": "InCommon - 1788741150",
@@ -134,7 +149,9 @@
         "coverLetter": "Cover Letter/L-T/Software-Engineer-D-DC-Land-Systems_LNT-SE-LS-1713751_2026-09-03.pdf",
         "linkedin": "LinkedIn/L-T/Software-Engineer-D-DC-Land-Systems_LNT-SE-LS-1713751_2026-09-03.txt"
       },
-      "legacy": []
+      "legacy": [
+        "LT---LNT_SE-LS_1713751.pdf"
+      ]
     },
     {
       "id": "kuku-fm-395432",
