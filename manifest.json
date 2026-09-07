@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:17Z",
+  "updated": "2026-09-07T09:41:18Z",
   "applications": [
     {
       "id": "ecoratings-1788568255",
@@ -16,7 +16,9 @@
         "linkedin": "LinkedIn/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.txt",
         "prepare": "Prepare/EcoRatings/Frontend-Developer-Fresher_1788568255_2026-09-07.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "EcoRatings---1788568255.pdf"
+      ]
     },
     {
       "id": "appversal-1788708410",
@@ -85,6 +87,21 @@
       "legacy": [
         "Best-Trading-Company---Software-Developer.pdf"
       ]
+    },
+    {
+      "id": "fujitsu-11840",
+      "tag": "Fujitsu - 11840",
+      "company": "Fujitsu",
+      "role": "Software Engineer Apprentice",
+      "jobId": "11840",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.pdf",
+        "linkedin": "LinkedIn/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.txt",
+        "prepare": "Prepare/Fujitsu/Software-Engineer-Apprentice_11840_2026-09-03.pdf"
+      },
+      "legacy": []
     },
     {
       "id": "dentsu-sokrati-r1128610",
