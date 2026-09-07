@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T09:41:20Z",
+  "updated": "2026-09-07T09:41:21Z",
   "applications": [
     {
       "id": "mindbridge-associate-gen-ai-engineer",
@@ -89,6 +89,21 @@
       ]
     },
     {
+      "id": "quickhyre-ai-associate",
+      "tag": "QuickHyre - AI Associate",
+      "company": "QuickHyre",
+      "role": "Artificial Intelligence (AI) Associate",
+      "jobId": "",
+      "date": "2026-09-04",
+      "files": {
+        "resume": "Company/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.pdf",
+        "coverLetter": "Cover Letter/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.pdf",
+        "linkedin": "LinkedIn/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.txt",
+        "prepare": "Prepare/QuickHyre/Artificial-Intelligence-AI-Associate_2026-09-04.pdf"
+      },
+      "legacy": []
+    },
+    {
       "id": "infoskaters-ai-developer",
       "tag": "Infoskaters - AI Developer",
       "company": "Infoskaters",
@@ -152,7 +167,9 @@
         "linkedin": "LinkedIn/Propsoch/Frontend-Engineer_2026-09-03.txt",
         "prepare": "Prepare/Propsoch/Frontend-Engineer_2026-09-03.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Propsoch---Frontend-Engineer.pdf"
+      ]
     },
     {
       "id": "parsons-r185565",
