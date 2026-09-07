@@ -123,6 +123,20 @@
       ]
     },
     {
+      "id": "l-t-lnt-se-ls-1713751",
+      "tag": "L&T - LNT_SE-LS_1713751",
+      "company": "L&T",
+      "role": "Software Engineer (D&DC Land Systems)",
+      "jobId": "LNT_SE-LS_1713751",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/L-T/Software-Engineer-D-DC-Land-Systems_LNT-SE-LS-1713751_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/L-T/Software-Engineer-D-DC-Land-Systems_LNT-SE-LS-1713751_2026-09-03.pdf",
+        "linkedin": "LinkedIn/L-T/Software-Engineer-D-DC-Land-Systems_LNT-SE-LS-1713751_2026-09-03.txt"
+      },
+      "legacy": []
+    },
+    {
       "id": "kuku-fm-395432",
       "tag": "Kuku FM - 395432",
       "company": "Kuku FM",
@@ -134,7 +148,9 @@
         "coverLetter": "Cover Letter/Kuku-FM/Frontend-Developer_395432_2026-09-03.pdf",
         "linkedin": "LinkedIn/Kuku-FM/Frontend-Developer_395432_2026-09-03.txt"
       },
-      "legacy": []
+      "legacy": [
+        "Kuku-FM---395432.pdf"
+      ]
     },
     {
       "id": "harmonic-260140",
