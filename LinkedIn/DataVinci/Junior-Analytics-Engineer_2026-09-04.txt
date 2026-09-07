@@ -1,0 +1,22 @@
+Subject: Referral Request — Analytics Engineering at DataVinci Private Limited
+
+Hi {{NAME}},
+
+I came across your profile at DataVinci Private Limited and really liked what you're building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef programmer (peak 2212). I've built multiple production-grade AI SaaS products end to end — including a multi-tenant B2B AI chatbot platform with RAG and voice support — and I currently ship React Native / Next.js products to 1300+ users as an SDE Intern at Clink AI, where I query and validate PostgreSQL-backed data and build client-facing dashboards from 400+ instrumented events.
+
+I'm actively exploring Analytics Engineering / Data Engineering roles. Would you be open to referring me for this role at DataVinci Private Limited? It would mean a lot.
+
+Role I'm applying for: https://internshala.com/job/detail/fresher-remote-junior-analytics-engineer-job-at-datavinci-private-limited1788411929
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/DataVinci---Junior-Analytics-Engineer.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+Skimly (SQL Data Pipeline): https://rajatgangwar-skimly.vercel.app
+
+Thanks for your time,
+Rajat Gangwar
++91-8601961513 | rajat.gangwar141@gmail.com

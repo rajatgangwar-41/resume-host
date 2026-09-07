@@ -1,0 +1,28 @@
+Subject: Referral Request — Golang Developer Intern at AppVersal
+
+Hi {{NAME}},
+
+I came across your profile at AppVersal and really liked what you're
+building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef
+programmer (peak 2212). I've built multiple production-grade full-stack SaaS
+products end to end — including a multi-tenant, microservices-style AI
+chatbot platform with REST APIs and PostgreSQL — and I currently ship
+React Native / Next.js products to 1300+ users as an SDE Intern at Clink AI.
+
+I'm actively exploring Backend Development roles. Would you be open
+to referring me for this internship at AppVersal? It would mean a lot.
+
+Role I'm applying for: https://internshala.com/internship/detail/golang-developer-internship-in-multiple-locations-at-appversal1788708410
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/AppVersal---1788708410.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+B2B AI SaaS Product (Echo): https://rajatgangwar-echo-web.vercel.app
+
+Thanks for your time,
+Rajat Gangwar
++91-8601961513 | rajat.gangwar141@gmail.com

@@ -1,0 +1,22 @@
+Subject: Referral Request — Software Development at Best Trading Company
+
+Hi {{NAME}},
+
+I came across your profile at Best Trading Company and really liked what you're building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef programmer (peak 2212). I've built multiple production-grade AI SaaS products end to end — including a multi-tenant B2B AI chatbot platform with RAG and voice support — and I currently ship React Native / Next.js products to 1300+ users as an SDE Intern at Clink AI.
+
+I'm actively exploring Software Development roles. Would you be open to referring me for this role at Best Trading Company? It would mean a lot.
+
+Role I'm applying for: https://internshala.com/job/detail/remote-part-time-software-developer-job-at-best-trading-company1788504035
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Best-Trading-Company---Software-Developer.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+B2B AI SaaS Product (Echo): https://rajatgangwar-echo-web.vercel.app
+
+Thanks for your time,
+Rajat Gangwar
++91-8601961513 | rajat.gangwar141@gmail.com

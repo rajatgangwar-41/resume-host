@@ -1,0 +1,22 @@
+Subject: Referral Request — Frontend Developer at Kuku FM
+
+Hi {{NAME}},
+
+I came across your profile at Kuku FM and really liked what you're building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef programmer (peak 2212). I've built multiple production-grade React/Next.js platforms end to end — including an AI coding agent SaaS with live app previews — and I currently ship React and React Native products to 1300+ users as an SDE Intern at Clink AI, working daily with hooks, state management, and REST API integration.
+
+I'm actively exploring Frontend / React Engineering roles. Would you be open to referring me for this role at Kuku FM? It would mean a lot.
+
+Role I'm applying for: https://app.pyjamahr.com/careers?company=Kuku%20FM&job_id=395432&company_uuid=8B92017E1E&utm_source=DIRECT&source=DIRECT&isHeaderVisible=undefined
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Kuku-FM---395432.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+AI Code Generation Platform: https://rajatgangwar-vibe.vercel.app
+
+Thanks for your time,
+Rajat Gangwar
++91-8601961513 | rajat.gangwar141@gmail.com
