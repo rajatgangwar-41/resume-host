@@ -84,7 +84,9 @@
         "linkedin": "LinkedIn/Infoskaters/AI-Developer_2026-09-04.txt",
         "prepare": "Prepare/Infoskaters/AI-Developer_2026-09-04.pdf"
       },
-      "legacy": []
+      "legacy": [
+        "Infoskaters---AI-Developer.pdf"
+      ]
     },
     {
       "id": "datavinci-junior-analytics-engineer",
@@ -119,6 +121,20 @@
       "legacy": [
         "Best-Trading-Company---Software-Developer.pdf"
       ]
+    },
+    {
+      "id": "kuku-fm-395432",
+      "tag": "Kuku FM - 395432",
+      "company": "Kuku FM",
+      "role": "Frontend Developer",
+      "jobId": "395432",
+      "date": "2026-09-03",
+      "files": {
+        "resume": "Company/Kuku-FM/Frontend-Developer_395432_2026-09-03.pdf",
+        "coverLetter": "Cover Letter/Kuku-FM/Frontend-Developer_395432_2026-09-03.pdf",
+        "linkedin": "LinkedIn/Kuku-FM/Frontend-Developer_395432_2026-09-03.txt"
+      },
+      "legacy": []
     },
     {
       "id": "harmonic-260140",
