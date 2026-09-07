@@ -17,6 +17,8 @@
   .brandmark{width:20px;height:20px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.18)}
   .tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
   input[type=search],input[type=password]{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);min-width:230px}
+  select#sortBy{font:inherit;font-size:13px;padding:7px 26px 7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--panel) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236b7280" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>') no-repeat right 8px center/13px;color:var(--text);cursor:pointer;appearance:none;-webkit-appearance:none}
+  select#sortBy[hidden]{display:none}
   button{font:inherit;font-size:12.5px;padding:7px 12px;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);cursor:pointer}
   button:hover{background:var(--panel-2)}
   button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -73,6 +75,7 @@
   <div class="topbar">
     <a class="brand" href="./"><img class="brandmark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMyZjVmZDYiLz4KICA8dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLFNlZ29lIFVJLFJvYm90byxIZWx2ZXRpY2EsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UjwvdGV4dD4KPC9zdmc+Cg==" alt=""> Rajat Gangwar - Resume Portal</a>
     <div class="tools">
+      <select id="sortBy" aria-label="Sort"></select>
       <input type="search" id="q" placeholder="Search this folder…" aria-label="Search">
       <button id="manageBtn"></button>
     </div>
@@ -121,6 +124,7 @@
   const ICON = { pdf: FILE_SVG('PDF','#d64545'), txt: FILE_SVG('TXT','#5b6b80') };
 
   let manifest = null, pending = null;
+  let sortState = { companies: 'name', files: 'newest' };
   const token = { get(){ try{return localStorage.getItem('rh_token')||''}catch(e){return ''} },
                   set(v){ try{ v?localStorage.setItem('rh_token',v):localStorage.removeItem('rh_token') }catch(e){} } };
   const toast = msg => { const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),3200); };
@@ -167,13 +171,23 @@
       crumbs.push(`<span class="sep">›</span><span class="cur">${esc(folder.name)}</span>`);
       const byCo = new Map();
       for (const a of apps()) if (a.files&&a.files[folder.key]) { if(!byCo.has(a.company)) byCo.set(a.company,[]); byCo.get(a.company).push(a); }
-      const cos = [...byCo.entries()].filter(([c])=>match(c)).sort((x,y)=>x[0].localeCompare(y[0]));
-      html = cos.map(([c,list])=>tileFolder(c, list.length, `${encodeURIComponent(folder.name)}/${encodeURIComponent(c)}`, `latest ${fmtDate(list.map(a=>a.date).sort().pop())}`, {ids:list.map(a=>a.id), label:c})).join('');
+      const latestOf = list => list.map(a=>a.date).sort().pop();
+      const cos = [...byCo.entries()].filter(([c])=>match(c));
+      const cSort = { name: (x,y)=>x[0].localeCompare(y[0]),
+                       newest: (x,y)=>latestOf(y[1]).localeCompare(latestOf(x[1])),
+                       oldest: (x,y)=>latestOf(x[1]).localeCompare(latestOf(y[1])),
+                       count: (x,y)=>y[1].length-x[1].length }[sortState.companies] || null;
+      if (cSort) cos.sort(cSort);
+      html = cos.map(([c,list])=>tileFolder(c, list.length, `${encodeURIComponent(folder.name)}/${encodeURIComponent(c)}`, `latest ${fmtDate(latestOf(list))}`, {ids:list.map(a=>a.id), label:c})).join('');
       foot = `${cos.length} companies · click a company to open its ${folder.label.toLowerCase()} files`;
     } else {
       const company = r[1];
       crumbs.push(`<span class="sep">›</span><a href="#/${encodeURIComponent(folder.name)}">${esc(folder.name)}</a><span class="sep">›</span><span class="cur">${esc(company)}</span>`);
-      const list = apps().filter(a=>a.company===company && a.files&&a.files[folder.key] && match(a.role,a.jobId,a.tag)).sort((x,y)=>y.date.localeCompare(x.date));
+      const fSort = { newest: (x,y)=>y.date.localeCompare(x.date),
+                       oldest: (x,y)=>x.date.localeCompare(y.date),
+                       role: (x,y)=>(x.role||x.tag).localeCompare(y.role||y.tag),
+                       jobid: (x,y)=>(x.jobId||'').localeCompare(y.jobId||'') }[sortState.files] || ((x,y)=>y.date.localeCompare(x.date));
+      const list = apps().filter(a=>a.company===company && a.files&&a.files[folder.key] && match(a.role,a.jobId,a.tag)).sort(fSort);
       html = list.map(a=>{
         const left=daysLeft(a);
         const sub=[a.jobId?`Job ID ${a.jobId}`:'', fmtDate(a.date)].filter(Boolean).join(' · ');
@@ -195,6 +209,32 @@
     $('#foot').textContent = foot;
     $('#q').placeholder = r.length ? `Search in ${r[r.length-1]}…` : 'Search folders…';
     $('#retention').textContent = manifest.retentionDays||90;
+    renderSortSelect(r, folder);
+  }
+
+  const SORT_OPTIONS = {
+    companies: [
+      {value:'name',   label:'Name (A–Z)'},
+      {value:'newest', label:'Newest first'},
+      {value:'oldest', label:'Oldest first'},
+      {value:'count',  label:'Most applications'},
+    ],
+    files: [
+      {value:'newest', label:'Newest first'},
+      {value:'oldest', label:'Oldest first'},
+      {value:'role',   label:'Role (A–Z)'},
+      {value:'jobid',  label:'Job ID'},
+    ],
+  };
+  function renderSortSelect(r, folder){
+    const sel = $('#sortBy');
+    const mode = (!r.length || folder.kind==='general') ? null : (r.length===1 ? 'companies' : 'files');
+    if (!mode){ sel.hidden = true; sel.innerHTML = ''; return; }
+    sel.hidden = false;
+    const opts = SORT_OPTIONS[mode];
+    const current = sortState[mode];
+    sel.innerHTML = opts.map(o=>`<option value="${o.value}"${o.value===current?' selected':''}>${esc(o.label)}</option>`).join('');
+    sel.dataset.mode = mode;
   }
 
   function refreshAuth(){
@@ -286,6 +326,7 @@
   $('#token').addEventListener('keydown', e=>{ if(e.key==='Enter') $('#saveToken').click(); });
   $('#cancelToken').addEventListener('click', ()=> $('#manage').classList.remove('on'));
   $('#q').addEventListener('input', render);
+  $('#sortBy').addEventListener('change', e=>{ const mode = e.target.dataset.mode; if(mode) sortState[mode] = e.target.value; render(); });
   window.addEventListener('hashchange', ()=>{ $('#q').value=''; render(); });
 
   fetch('manifest.json?t=' + Date.now(), {cache:'no-store'}).then(r=>r.json()).then(m=>{ manifest=m; refreshAuth(); })
