@@ -44,7 +44,7 @@
   .tile .badge.soon{color:var(--warn);border-color:rgba(178,106,0,.4)}
   .tile .count{position:absolute;top:10px;right:12px;font-size:11px;color:var(--muted);background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:1px 7px}
   .tile .del{position:absolute;top:8px;left:8px;width:26px;height:26px;padding:0;border-radius:50%;line-height:24px;font-size:14px;display:none}
-  body.manage .tile.file .del{display:block}
+  body.managing .tile.file .del{display:block}
   .empty{color:var(--muted);font-size:13px;padding:50px 20px;text-align:center;background:var(--panel);border:1px dashed var(--border);border-radius:12px}
   .confirm{position:fixed;inset:0;background:rgba(20,23,28,.35);display:none;align-items:center;justify-content:center;z-index:20}
   .confirm.on{display:flex}
@@ -165,7 +165,7 @@
   }
 
   function setManage(on){
-    manageOn = on; document.body.classList.toggle('manage', on); $('#manage').classList.toggle('on', on);
+    manageOn = on; document.body.classList.toggle('managing', on); $('#manage').classList.toggle('on', on);
     $('#manageBtn').textContent = on ? 'Done' : 'Manage'; $('#manageBtn').classList.toggle('on', on);
     $('#manageState').textContent = token.get() ? 'Signed in — ✕ on a file deletes it.' : 'Not signed in — paste a token to enable delete.';
     render();
