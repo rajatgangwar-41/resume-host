@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T10:09:06Z",
+  "updated": "2026-09-07T10:22:30Z",
   "applications": [
     {
       "id": "topgrep-tech-software-developer-go-rust",
@@ -28,7 +28,6 @@
       "jobId": "0000",
       "date": "2026-09-07",
       "files": {
-        "resume": "Company/Test/Delete-Me_0000_2026-09-07.pdf",
         "coverLetter": "Cover Letter/Test/Delete-Me_0000_2026-09-07.pdf"
       },
       "legacy": []
