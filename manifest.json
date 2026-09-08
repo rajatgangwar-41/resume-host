@@ -1,8 +1,25 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-07T11:33:09Z",
+  "updated": "2026-09-08T05:18:26Z",
   "applications": [
+    {
+      "id": "oracle-344317",
+      "tag": "Oracle - 344317",
+      "company": "Oracle",
+      "role": "Application Software Engineer 1",
+      "jobId": "344317",
+      "date": "2026-09-08",
+      "files": {
+        "resume": "Company/Oracle/Application-Software-Engineer-1_344317_2026-09-08.pdf",
+        "coverLetter": "Cover Letter/Oracle/Application-Software-Engineer-1_344317_2026-09-08.pdf",
+        "resumeP1": "Company/Oracle/Application-Software-Engineer-1_344317_2026-09-08_P1.pdf",
+        "coverLetterP1": "Cover Letter/Oracle/Application-Software-Engineer-1_344317_2026-09-08_P1.pdf",
+        "linkedin": "LinkedIn/Oracle/Application-Software-Engineer-1_344317_2026-09-08.txt",
+        "prepare": "Prepare/Oracle/Application-Software-Engineer-1_344317_2026-09-08.pdf"
+      },
+      "legacy": []
+    },
     {
       "id": "incommon-1788741150",
       "tag": "InCommon - 1788741150",
