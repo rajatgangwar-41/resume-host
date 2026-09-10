@@ -1,8 +1,25 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-09T08:06:15Z",
+  "updated": "2026-09-10T05:38:44Z",
   "applications": [
+    {
+      "id": "beyond-technologies-build",
+      "tag": "Beyond Technologies - BUILD",
+      "company": "Beyond Technologies",
+      "role": "Full Stack AI Engineer",
+      "jobId": "BUILD",
+      "date": "2026-09-10",
+      "files": {
+        "resume": "Company/Beyond-Technologies/Full-Stack-AI-Engineer_BUILD_2026-09-10.pdf",
+        "coverLetter": "Cover Letter/Beyond-Technologies/Full-Stack-AI-Engineer_BUILD_2026-09-10.pdf",
+        "resumeP1": "Company/Beyond-Technologies/Full-Stack-AI-Engineer_BUILD_2026-09-10_P1.pdf",
+        "coverLetterP1": "Cover Letter/Beyond-Technologies/Full-Stack-AI-Engineer_BUILD_2026-09-10_P1.pdf",
+        "linkedin": "LinkedIn/Beyond-Technologies/Full-Stack-AI-Engineer_BUILD_2026-09-10.txt",
+        "prepare": "Prepare/Beyond-Technologies/Full-Stack-AI-Engineer_BUILD_2026-09-10.pdf"
+      },
+      "legacy": []
+    },
     {
       "id": "oracle-344317",
       "tag": "Oracle - 344317",

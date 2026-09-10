@@ -1,0 +1,22 @@
+Subject: Referral Request — Full-Stack AI Engineering at Beyond Technologies
+
+Hi {{NAME}},
+
+I came across your profile at Beyond Technologies and really liked what you're building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef programmer (peak 2212). I've built multiple production-grade AI SaaS products end to end — including a multi-tenant B2B AI chatbot platform with RAG, LLM tool calling and voice agents, and a multi-agent coding platform with a durable-state agentic loop and a Docker/E2B sandbox — and I currently ship React Native / Next.js products to 1300+ users as an SDE Intern at Clink AI.
+
+I'm actively exploring Full-Stack AI Engineering roles. Would you be open to referring me for this role at Beyond Technologies? It would mean a lot.
+
+Role I'm applying for: https://beyond.ciltriq.com/apply/BUILD
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Company/Beyond-Technologies/Full-Stack-AI-Engineer_BUILD_2026-09-10.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+B2B AI SaaS Product: https://rajatgangwar-echo-web.vercel.app
+
+Thanks for your time,
+Rajat Gangwar
++91-8601961513 | rajat.gangwar141@gmail.com
