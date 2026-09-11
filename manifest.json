@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-11T07:07:57Z",
+  "updated": "2026-09-11T07:12:09Z",
   "applications": [
     {
       "id": "zealous-services-full-stack-developer-php-python-react",
@@ -34,6 +34,23 @@
         "coverLetterP1": "Cover Letter/TransFi/MERN-Full-Stack-Developer_2026-09-11_P1.pdf",
         "linkedin": "LinkedIn/TransFi/MERN-Full-Stack-Developer_2026-09-11.txt",
         "prepare": "Prepare/TransFi/MERN-Full-Stack-Developer_2026-09-11.pdf"
+      },
+      "legacy": []
+    },
+    {
+      "id": "hyrhub-backend-engineer-python-golang",
+      "tag": "HyrHub - Backend Engineer (Python, Golang)",
+      "company": "HyrHub",
+      "role": "Backend Engineer (Python, Golang)",
+      "jobId": "",
+      "date": "2026-09-11",
+      "files": {
+        "resume": "Company/HyrHub/Backend-Engineer-Python-Golang_2026-09-11.pdf",
+        "coverLetter": "Cover Letter/HyrHub/Backend-Engineer-Python-Golang_2026-09-11.pdf",
+        "resumeP1": "Company/HyrHub/Backend-Engineer-Python-Golang_2026-09-11_P1.pdf",
+        "coverLetterP1": "Cover Letter/HyrHub/Backend-Engineer-Python-Golang_2026-09-11_P1.pdf",
+        "linkedin": "LinkedIn/HyrHub/Backend-Engineer-Python-Golang_2026-09-11.txt",
+        "prepare": "Prepare/HyrHub/Backend-Engineer-Python-Golang_2026-09-11.pdf"
       },
       "legacy": []
     },
