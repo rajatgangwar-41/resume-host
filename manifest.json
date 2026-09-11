@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-11T07:12:09Z",
+  "updated": "2026-09-11T07:18:32Z",
   "applications": [
     {
       "id": "zealous-services-full-stack-developer-php-python-react",
@@ -68,6 +68,23 @@
         "coverLetterP1": "Cover Letter/HookUX/Full-Stack-Developer_2026-09-11_P1.pdf",
         "linkedin": "LinkedIn/HookUX/Full-Stack-Developer_2026-09-11.txt",
         "prepare": "Prepare/HookUX/Full-Stack-Developer_2026-09-11.pdf"
+      },
+      "legacy": []
+    },
+    {
+      "id": "amperehour-energy-golang-system-developer",
+      "tag": "AmpereHour energy - Golang System Developer",
+      "company": "AmpereHour energy",
+      "role": "Golang System Developer",
+      "jobId": "",
+      "date": "2026-09-11",
+      "files": {
+        "resume": "Company/AmpereHour-energy/Golang-System-Developer_2026-09-11.pdf",
+        "coverLetter": "Cover Letter/AmpereHour-energy/Golang-System-Developer_2026-09-11.pdf",
+        "resumeP1": "Company/AmpereHour-energy/Golang-System-Developer_2026-09-11_P1.pdf",
+        "coverLetterP1": "Cover Letter/AmpereHour-energy/Golang-System-Developer_2026-09-11_P1.pdf",
+        "linkedin": "LinkedIn/AmpereHour-energy/Golang-System-Developer_2026-09-11.txt",
+        "prepare": "Prepare/AmpereHour-energy/Golang-System-Developer_2026-09-11.pdf"
       },
       "legacy": []
     },

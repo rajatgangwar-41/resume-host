@@ -1,0 +1,28 @@
+Subject: Referral Request — Golang System Developer at AmpereHour energy
+
+Hi {{NAME}},
+
+I came across your profile at AmpereHour energy and really liked what you're
+building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef
+programmer (peak 2212). I've built multiple production-grade backend
+systems end to end — including a multi-tenant B2B AI platform with a
+real-time database serving 99% uptime — and I currently ship React Native /
+Next.js products to 1300+ users as an SDE Intern at Clink AI. I'm actively
+picking up Go and systems-level programming to broaden my backend range.
+
+I'm actively exploring Golang System Developer roles. Would you be open
+to referring me for this role at AmpereHour energy? It would mean a lot.
+
+Role I'm applying for: https://cutshort.io/job/Golang-System-Developer-Pune-Mumbai-AmpereHour-energy-mMe5qUUF
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Company/AmpereHour-energy/Golang-System-Developer_2026-09-11.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+B2B AI SaaS Product: https://rajatgangwar-echo-web.vercel.app
+
+Thanks for your time,
+Rajat
