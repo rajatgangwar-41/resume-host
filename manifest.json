@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-11T07:02:24Z",
+  "updated": "2026-09-11T07:07:57Z",
   "applications": [
     {
       "id": "zealous-services-full-stack-developer-php-python-react",
@@ -51,6 +51,23 @@
         "coverLetterP1": "Cover Letter/HookUX/Full-Stack-Developer_2026-09-11_P1.pdf",
         "linkedin": "LinkedIn/HookUX/Full-Stack-Developer_2026-09-11.txt",
         "prepare": "Prepare/HookUX/Full-Stack-Developer_2026-09-11.pdf"
+      },
+      "legacy": []
+    },
+    {
+      "id": "adsremedy-media-llp-backend-developer-golang",
+      "tag": "Adsremedy Media LLP - Backend Developer (Golang)",
+      "company": "Adsremedy Media LLP",
+      "role": "Backend Developer (Golang)",
+      "jobId": "",
+      "date": "2026-09-11",
+      "files": {
+        "resume": "Company/Adsremedy-Media-LLP/Backend-Developer-Golang_2026-09-11.pdf",
+        "coverLetter": "Cover Letter/Adsremedy-Media-LLP/Backend-Developer-Golang_2026-09-11.pdf",
+        "resumeP1": "Company/Adsremedy-Media-LLP/Backend-Developer-Golang_2026-09-11_P1.pdf",
+        "coverLetterP1": "Cover Letter/Adsremedy-Media-LLP/Backend-Developer-Golang_2026-09-11_P1.pdf",
+        "linkedin": "LinkedIn/Adsremedy-Media-LLP/Backend-Developer-Golang_2026-09-11.txt",
+        "prepare": "Prepare/Adsremedy-Media-LLP/Backend-Developer-Golang_2026-09-11.pdf"
       },
       "legacy": []
     },

@@ -1,0 +1,28 @@
+Subject: Referral Request — Backend Developer (Golang) at Adsremedy Media LLP
+
+Hi {{NAME}},
+
+I came across your profile at Adsremedy Media LLP and really liked what you're
+building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef
+programmer (peak 2212). I've built multiple production-grade backend
+systems end to end — including a multi-tenant B2B AI platform with a
+real-time database serving 99% uptime — and I currently ship React Native /
+Next.js products to 1300+ users as an SDE Intern at Clink AI. I'm actively
+picking up Go to broaden my backend language range.
+
+I'm actively exploring Backend Developer roles. Would you be open
+to referring me for this role at Adsremedy Media LLP? It would mean a lot.
+
+Role I'm applying for: https://cutshort.io/job/Backend-Developer-Golang-Adsremedy-Media-LLP-tmwcDjf2
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Company/Adsremedy-Media-LLP/Backend-Developer-Golang_2026-09-11.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+B2B AI SaaS Product: https://rajatgangwar-echo-web.vercel.app
+
+Thanks for your time,
+Rajat
