@@ -1,8 +1,25 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-10T08:05:21Z",
+  "updated": "2026-09-11T06:44:42Z",
   "applications": [
+    {
+      "id": "hookux-full-stack-developer",
+      "tag": "HookUX - Full Stack Developer",
+      "company": "HookUX",
+      "role": "Full Stack Developer",
+      "jobId": "",
+      "date": "2026-09-11",
+      "files": {
+        "resume": "Company/HookUX/Full-Stack-Developer_2026-09-11.pdf",
+        "coverLetter": "Cover Letter/HookUX/Full-Stack-Developer_2026-09-11.pdf",
+        "resumeP1": "Company/HookUX/Full-Stack-Developer_2026-09-11_P1.pdf",
+        "coverLetterP1": "Cover Letter/HookUX/Full-Stack-Developer_2026-09-11_P1.pdf",
+        "linkedin": "LinkedIn/HookUX/Full-Stack-Developer_2026-09-11.txt",
+        "prepare": "Prepare/HookUX/Full-Stack-Developer_2026-09-11.pdf"
+      },
+      "legacy": []
+    },
     {
       "id": "beyond-technologies-build",
       "tag": "Beyond Technologies - BUILD",
