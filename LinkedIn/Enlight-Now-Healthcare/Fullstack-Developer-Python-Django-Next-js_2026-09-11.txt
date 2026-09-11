@@ -1,0 +1,27 @@
+Subject: Referral Request — Fullstack Developer at Enlight Now Healthcare
+
+Hi {{NAME}},
+
+I came across your profile at Enlight Now Healthcare and really liked what
+you're building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef
+programmer (peak 2212). I've built multiple production-grade AI SaaS
+products end to end on Next.js — including a multi-tenant B2B AI chatbot
+platform with RAG and voice support — and I currently ship React Native /
+Next.js products to 1300+ users as an SDE Intern at Clink AI.
+
+I'm actively exploring Fullstack Developer roles. Would you be open
+to referring me for this role at Enlight Now Healthcare? It would mean a lot.
+
+Role I'm applying for: https://cutshort.io/job/Fullstack-Developer-Python-Django-Nextjs-Bengaluru-Bangalore-Enlight-Now-Healthcare-Pvt-Ltd-tzyGkoKN
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Company/Enlight-Now-Healthcare/Fullstack-Developer-Python-Django-Next-js_2026-09-11.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+B2B AI SaaS Product: https://rajatgangwar-echo-web.vercel.app
+
+Thanks for your time,
+Rajat
