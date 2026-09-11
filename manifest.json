@@ -1,7 +1,7 @@
 {
   "version": 1,
   "retentionDays": 90,
-  "updated": "2026-09-11T07:34:40Z",
+  "updated": "2026-09-11T07:57:40Z",
   "applications": [
     {
       "id": "zealous-services-full-stack-developer-php-python-react",
@@ -51,6 +51,23 @@
         "coverLetterP1": "Cover Letter/RedString/Founding-Engineer_2026-09-11_P1.pdf",
         "linkedin": "LinkedIn/RedString/Founding-Engineer_2026-09-11.txt",
         "prepare": "Prepare/RedString/Founding-Engineer_2026-09-11.pdf"
+      },
+      "legacy": []
+    },
+    {
+      "id": "quanteon-solutions-ai-ml-engineer",
+      "tag": "Quanteon Solutions - AI-ML Engineer",
+      "company": "Quanteon Solutions",
+      "role": "AI/ML Engineer",
+      "jobId": "",
+      "date": "2026-09-11",
+      "files": {
+        "resume": "Company/Quanteon-Solutions/AI-ML-Engineer_2026-09-11.pdf",
+        "coverLetter": "Cover Letter/Quanteon-Solutions/AI-ML-Engineer_2026-09-11.pdf",
+        "resumeP1": "Company/Quanteon-Solutions/AI-ML-Engineer_2026-09-11_P1.pdf",
+        "coverLetterP1": "Cover Letter/Quanteon-Solutions/AI-ML-Engineer_2026-09-11_P1.pdf",
+        "linkedin": "LinkedIn/Quanteon-Solutions/AI-ML-Engineer_2026-09-11.txt",
+        "prepare": "Prepare/Quanteon-Solutions/AI-ML-Engineer_2026-09-11.pdf"
       },
       "legacy": []
     },
