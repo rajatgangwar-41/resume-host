@@ -1,0 +1,13 @@
+Hi {{NAME}},
+
+I came across the Founding Product Engineer, Developer Adoption role at Signett and it's a strong match for how I like to work -- full-stack TypeScript, close to real developers, shipping into ambiguity rather than a handed roadmap.
+
+I'm currently a Software Development Engineering Intern at Clink AI (React Native/TypeScript, shipping to 1300+ users) and have built two production AI platforms on my own -- Echo (a B2B SaaS platform with an LLM tool-calling support agent) and Vibe (an autonomous AI coding agent with a browser-based tool-calling loop). Both involved designing clean tool/function interfaces for an LLM to call reliably, which is directly the skill behind MCP/WebMCP-style integrations this role is built around.
+
+Resume: https://rajatgangwar-41.github.io/resume-host/Company/Signett/Founding-Product-Engineer-Developer-Adoption_2026-09-12.pdf
+
+Would appreciate a referral or a pointer to the right person if you're open to it. Happy to share more context.
+
+Thanks,
+Rajat
++91-8601961513 | rajat.gangwar141@gmail.com
