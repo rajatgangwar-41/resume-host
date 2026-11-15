@@ -8,8 +8,9 @@ building.
 I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef
 programmer (peak 2212). I've built multiple production-grade AI SaaS
 products end to end — including a multi-tenant B2B AI chatbot platform
-with RAG and voice support — and I currently ship React Native / Next.js
-products to 1300+ users as an SDE Intern at Clink AI.
+with RAG and voice support. I shipped React Native / Next.js products to
+1300+ users at Clink AI and currently build full-stack AI products as a
+Full Stack AI Engineer at Swimlane Digital.
 
 I'm actively exploring Frontend / React Engineering roles, especially
 React and TypeScript work on data-intensive products like the Confluent
