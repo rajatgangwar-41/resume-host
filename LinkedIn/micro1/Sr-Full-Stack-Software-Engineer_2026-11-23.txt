@@ -1,0 +1,31 @@
+Subject: Referral Request — Full-Stack Engineering at micro1
+
+Hi {{NAME}},
+
+I came across your profile at micro1 and really liked what you're
+building.
+
+I'm a Software Engineer (B.Tech, NIT Prayagraj) and a 6-star CodeChef
+programmer (peak 2212). I've built multiple production-grade AI SaaS
+products end to end — including a multi-tenant B2B AI chatbot platform
+with RAG and voice support. I shipped React Native / Next.js products to
+1300+ users at Clink AI and currently build full-stack AI products as a
+Full Stack AI Engineer at Swimlane Digital.
+
+I'm actively exploring Full-Stack Engineering roles, especially work that
+spans React/TypeScript front ends and Python/Node.js back ends, including
+reviewing and debugging AI-generated code. Would you be open to referring
+me for this role at micro1? It would mean a lot.
+
+Role I'm applying for: https://jobs.micro1.ai/post/03ef0cc7-8c09-466f-9b37-b4d8b3c97de5
+
+Quick reference:
+Resume: https://rajatgangwar-41.github.io/resume-host/Company/micro1/Sr-Full-Stack-Software-Engineer_2026-11-23.pdf
+GitHub: https://github.com/rajatgangwar-41
+LinkedIn: https://www.linkedin.com/in/rajatgangwar41
+Portfolio: https://rajatgangwar.netlify.app
+AI Coding Agent Platform: https://rajatgangwar-vibe.vercel.app
+
+Thanks for your time,
+Rajat Gangwar
++91-8601961513 | rajat.gangwar141@gmail.com
